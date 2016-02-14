@@ -1,5 +1,5 @@
 body {
-    background-color: #37474F;
+    background-color: #C8E6C9;
     margin: auto;
     margin-top: -16px;
 }
@@ -10,12 +10,11 @@ ul#topmenu {
     padding-top: 16px;
     padding-bottom: 16px;
     padding-left: 0px;
-    margin-bottom: auto;
+    margin-bottom: 0px;
 }
 
 ul#topmenu li {
     display: inline;
-    type: none;
     padding-top: 16px;
     padding-bottom: 16px;
     margin: -2px;
@@ -50,21 +49,42 @@ li#home {
 
 div#sceneholder {
     margin: 0px;
+    background-image: url(elcapitan.jpg);
+    background-size: 100% 100%;
+    width: 100%;
+    height: 400px;
 }
 
-div.para {
-    margin: 16px;
+div#sceneholder p {
+    text-align: center;
+    font-family: roboto-black;
+    color: rgba(255, 255, 255, 0.7);
+    line-height: 400px;
+    font-size: 250px;
+    margin: 0px;
+    vertical-align: middle;
 }
 
-div.para h1 {
+div#sceneholder h1 {
+    position: absolute;
     font-family: helvetica;
     color: white;
     font-size: 250%;
 }
 
+div.para h1 {
+    font-family: helvetica;
+    color: #37474F;
+    font-size: 250%;
+}
+
 div.para p {
-    color: white;
+    color: #37474F;
     font-family: roboto;
+    letter-spacing: 1px;
+    word-spacing: 2px;
+    padding: 0px 48px 0px 48px;
+    line-height: 150%
 }
 
 div.para h1 {
@@ -78,7 +98,5 @@ div#footer {
     font-family: roboto;
     font-size: 75%;
     font-style: italic;
-    bottom: 0;
     width: 100%;
-    height: auto;
 }

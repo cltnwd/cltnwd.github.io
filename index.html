@@ -18,6 +18,35 @@
 
 <body>
 
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.0/jquery.min.js"></script>
+    <script>
+        $(document).ready(function () {
+            $("#home").click(function () {
+                $("#paratitle").fadeToggle("slow", function () {
+                    $("#paratitle").text("HOME");
+                });
+
+                $("#paratitle").fadeToggle("slow");
+            });
+
+            $("#general").click(function () {
+                $("#paratitle").fadeToggle("slow", function () {
+                    $("#paratitle").text("GENE");
+                });
+
+                $("#paratitle").fadeToggle("slow");
+            });
+
+            $("#projects").click(function () {
+                $("#paratitle").fadeToggle("slow", function () {
+                    $("#paratitle").text("PROJ");
+                });
+
+                $("#paratitle").fadeToggle("slow");
+            });
+        });
+    </script>
+
     <!-- change tab color -->
     <script>
         function activateTab(tabid) {
@@ -30,8 +59,6 @@
                 document.getElementById("homelink").style.color = "#37474F";
                 document.getElementById("generallink").style.color = "#ffffff";
                 document.getElementById("projectslink").style.color = "#ffffff";
-
-                document.getElementById("paratitle").textContent = "Home";
             }
             <!-- general tab -->
             else if (tabid == 1) {
@@ -42,8 +69,6 @@
                 document.getElementById("homelink").style.color = "#ffffff";
                 document.getElementById("generallink").style.color = "#37474F";
                 document.getElementById("projectslink").style.color = "#ffffff";
-
-                document.getElementById("paratitle").textContent = "General";
             }
             <!-- projects tab -->
             else if (tabid == 2) {
@@ -54,8 +79,6 @@
                 document.getElementById("homelink").style.color = "#ffffff";
                 document.getElementById("generallink").style.color = "#ffffff";
                 document.getElementById("projectslink").style.color = "#37474F";
-
-                document.getElementById("paratitle").textContent = "Projects";
             }
 
         }
@@ -67,30 +90,23 @@
         <li id="projects" onclick="activateTab(2)" ;><a id="projectslink" href="#projects">Projects</a></li>
     </ul>
 
-    <div id="sceneholder"><img src="elcapitan.jpg " ; alt="photo not working :(" ; width="100%" height="auto ">
+    <div id="sceneholder" ; background="elcapitan.jpg">
+        <p id="paratitle">HOME</h1>
     </div>
 
-    <div class="para">
-        <h1 id="paratitle">Home</h1>
-        <p>Aliquam ac libero et erat ornare maximus. Quisque non vestibulum massa. Curabitur tincidunt vel libero et pellentesque. Mauris ultrices commodo ex, at dictum lorem dictum in. Suspendisse ante odio, euismod non faucibus et, sagittis quis sem. Morbi sodales est quis tincidunt eleifend. Sed pretium ante ac sem laoreet fermentum. In hac habitasse platea dictumst. Vivamus aliquam sem sollicitudin purus sodales eleifend. Sed viverra in tortor id cursus.</p>
-        <p>Nulla nec consectetur ipsum. Etiam laoreet augue eu porttitor ultrices. Nunc sollicitudin enim a lectus posuere dignissim. Phasellus vitae ante non elit auctor eleifend at id eros. Etiam ut lacus vulputate, porttitor tortor eget, volutpat augue. Ut in tempor justo. Vestibulum scelerisque imperdiet neque, et venenatis mauris facilisis sed. Praesent ac diam dapibus est mattis ornare.
-        </p>
-        <p>Aliquam ac libero et erat ornare maximus. Quisque non vestibulum massa. Curabitur tincidunt vel libero et pellentesque. Mauris ultrices commodo ex, at dictum lorem dictum in. Suspendisse ante odio, euismod non faucibus et, sagittis quis sem. Morbi sodales est quis tincidunt eleifend. Sed pretium ante ac sem laoreet fermentum. In hac habitasse platea dictumst. Vivamus aliquam sem sollicitudin purus sodales eleifend. Sed viverra in tortor id cursus.</p>
-        <p>Nulla nec consectetur ipsum. Etiam laoreet augue eu porttitor ultrices. Nunc sollicitudin enim a lectus posuere dignissim. Phasellus vitae ante non elit auctor eleifend at id eros. Etiam ut lacus vulputate, porttitor tortor eget, volutpat augue. Ut in tempor justo. Vestibulum scelerisque imperdiet neque, et venenatis mauris facilisis sed. Praesent ac diam dapibus est mattis ornare.
-        </p>
+    <div class="para" id="para">
+
+        <p>This is a paragraph about a whole bunch of stuff that i will fill in later. (maybe)</p>
+        <p>All work and no play makes Jack a dull boy. All work and no play makes Jack a dull boy. All work and no play makes Jack a dull boy. All work and no play makes Jack a dull boy. All work and no play makes Jack a dull boy. All work and no play makes Jack a dull boy. All work and no play makes Jack a dull boy. All work and no play makes Jack a dull boy.
+            <br>All work and no play makes Jack a dull boy. All work and no play makes Jack a dull boy. All work and no play makes Jack a dull boy. All work and no play makes Jack a dull boy. All work and no play makes Jack a dull boy. All work and no play makes Jack a dull boy. All work and no play makes Jack a dull boy. All work and no play makes Jack a dull boy. All work and no play makes Jack a dull boy. All work and no play makes Jack a dull boy. All work and no play makes Jack
+            <br> a dull boy. All work and no play makes Jack a dull boy. All work and no play makes Jack a dull boy. All work and no play makes Jack a dull boy. All work and no play makes Jack a dull boy. </p>
 
     </div>
 
     <br>
     <br>
 
-    <div id="footer">
-        <ul style="border-top:1px solid rgba(255,255,255,0.19); padding:8px;">
-            <li style="display:inline; margin-right:16px;">Colton Wood</li>
-            <li style="display:inline; margin-right:16px;">coltonhair@gmail.com</li>
-            <li style="display:inline; ">903.563.1375</li>
-        </ul>
-    </div>
+
 
 </body>
 
