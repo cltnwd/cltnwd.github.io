@@ -16,99 +16,46 @@
 
 </head>
 
-<body>
+<body onload="loadReddit('pics')">
+
+    <div id="toolbar">
+        <input type="text" id="subreddit" class="subredditarea" size="9" value="frontpage">
+    </div>
+
+    <div id="cardholder">
+
+        <div class="card" id="card1">
+            <h1 id="title1" class="cardtitle">Reddit error</h1>
+            <img id="thumb1" scr="default" width="100%" height="auto">
+        </div>
+
+        <div class="card" id="card2">
+            <h1 id="title2" class="cardtitle">Reddit error</h1>
+            <img id="thumb2" scr="default" width="100%" height="auto">
+        </div>
+
+        <div class="card" id="card3">
+            <h1 id="title3" class="cardtitle">Reddit error</h1>
+            <img id="thumb3" scr="default" width="100%" height="auto">
+        </div>
+
+        <div class="card" id="card4">
+            <h1 id="title4" class="cardtitle">Reddit error</h1>
+            <img id="thumb4" scr="default" width="100%" height="auto">
+        </div>
+
+        <div class="card" id="card5">
+            <h1 id="title5" class="cardtitle">Reddit error</h1>
+            <img id="thumb5" scr="default" width="100%" height="auto">
+        </div>
+
+
+    </div>
+
+
 
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.0/jquery.min.js"></script>
-    <script>
-        $(document).ready(function () {
-            $("#home").click(function () {
-                $("#paratitle").fadeToggle("slow", function () {
-                    $("#paratitle").text("HOME");
-                });
-
-                $("#paratitle").fadeToggle("slow");
-            });
-
-            $("#general").click(function () {
-                $("#paratitle").fadeToggle("slow", function () {
-                    $("#paratitle").text("GENERAL");
-                });
-
-                $("#paratitle").fadeToggle("slow");
-            });
-
-            $("#projects").click(function () {
-                $("#paratitle").fadeToggle("slow", function () {
-                    $("#paratitle").text("PROJECTS");
-                });
-
-                $("#paratitle").fadeToggle("slow");
-            });
-        });
-    </script>
-
-    <!-- change tab color -->
-    <script>
-        function activateTab(tabid) {
-            <!-- home tab -->
-            if (tabid == 0) {
-                document.getElementById("home").style.backgroundColor = "#00E676";
-                document.getElementById("general").style.backgroundColor = "#37474F";
-                document.getElementById("projects").style.backgroundColor = "#37474F";
-
-                document.getElementById("homelink").style.color = "#37474F";
-                document.getElementById("generallink").style.color = "#ffffff";
-                document.getElementById("projectslink").style.color = "#ffffff";
-            }
-            <!-- general tab -->
-            else if (tabid == 1) {
-                document.getElementById("home").style.backgroundColor = "#37474F";
-                document.getElementById("general").style.backgroundColor = "#00E676";
-                document.getElementById("projects").style.backgroundColor = "#37474F";
-
-                document.getElementById("homelink").style.color = "#ffffff";
-                document.getElementById("generallink").style.color = "#37474F";
-                document.getElementById("projectslink").style.color = "#ffffff";
-            }
-            <!-- projects tab -->
-            else if (tabid == 2) {
-                document.getElementById("home").style.backgroundColor = "#37474F";
-                document.getElementById("general").style.backgroundColor = "#37474F";
-                document.getElementById("projects").style.backgroundColor = "#00E676";
-
-                document.getElementById("homelink").style.color = "#ffffff";
-                document.getElementById("generallink").style.color = "#ffffff";
-                document.getElementById("projectslink").style.color = "#37474F";
-            }
-
-        }
-    </script>
-
-    <ul id="topmenu">
-        <li id="home" onclick="activateTab(0)" ;><a id="homelink" href="#home">Home</a></li>
-        <li id="general" onclick="activateTab(1)"><a id="generallink" href="#general">General</a></li>
-        <li id="projects" onclick="activateTab(2)" ;><a id="projectslink" href="#projects">Projects</a></li>
-    </ul>
-
-    <div id="sceneholder" ; background="elcapitan.jpg">
-        <img src="elcapitan.jpg">
-        <p id="paratitle">HOME</h1>
-    </div>
-
-    <div class="para" id="para">
-
-        <p>This is a paragraph about a whole bunch of stuff that i will fill in later. (maybe)</p>
-        <p>All work and no play makes Jack a dull boy. All work and no play makes Jack a dull boy. All work and no play makes Jack a dull boy. All work and no play makes Jack a dull boy. All work and no play makes Jack a dull boy. All work and no play makes Jack a dull boy. All work and no play makes Jack a dull boy. All work and no play makes Jack a dull boy.
-            <br>All work and no play makes Jack a dull boy. All work and no play makes Jack a dull boy. All work and no play makes Jack a dull boy. All work and no play makes Jack a dull boy. All work and no play makes Jack a dull boy. All work and no play makes Jack a dull boy. All work and no play makes Jack a dull boy. All work and no play makes Jack a dull boy. All work and no play makes Jack a dull boy. All work and no play makes Jack a dull boy. All work and no play makes Jack
-            <br> a dull boy. All work and no play makes Jack a dull boy. All work and no play makes Jack a dull boy. All work and no play makes Jack a dull boy. All work and no play makes Jack a dull boy. </p>
-
-    </div>
-
-    <br>
-    <br>
-
-
-
+    <script src="scripts.js"></script>
 </body>
 
 </html>

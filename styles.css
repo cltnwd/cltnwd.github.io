@@ -1,99 +1,53 @@
 body {
-    background-color: #C8E6C9;
-    margin: auto;
-    margin-top: -16px;
-}
-
-ul#topmenu {
-    list-style-type: none;
-    background-color: #37474F;
-    padding-top: 16px;
-    padding-bottom: 16px;
-    padding-left: 0px;
-    margin-bottom: 0px;
-}
-
-ul#topmenu li {
-    display: inline;
-    padding-top: 16px;
-    padding-bottom: 16px;
-    margin: -2px;
-}
-
-ul#topmenu a {
-    display: block;
-    font-family: roboto;
-    text-align: center;
-    letter-spacing: 2px;
-    color: white;
-    display: inline;
-    padding: 16px;
-    text-decoration: none;
-    border-right: 1px solid white;
-}
-
-ul#topmenu a:hover {
-    font-family: roboto;
-    color: white;
-    display: inline;
-    background: rgba(0, 0, 0, 0.19);
-}
-
-li#home a {
-    color: #37474F;
-}
-
-li#home {
-    background-color: #00E676;
-}
-
-div#sceneholder img {
-    width: 100%;
-    position: relative;
-}
-
-div#sceneholder p {
-    text-align: center;
-    font-family: roboto-black;
-    color: rgba(255, 255, 255, 0.7);
-    font-size: 150px;
     margin: 0px;
-    position: absolute;
     width: 100%;
 }
 
-div#sceneholder h1 {
-    position: absolute;
-    font-family: helvetica;
-    color: white;
-    font-size: 250%;
-}
-
-div.para h1 {
-    font-family: helvetica;
-    color: #37474F;
-    font-size: 250%;
-}
-
-div.para p {
-    color: #37474F;
-    font-family: roboto;
-    letter-spacing: 1px;
-    word-spacing: 2px;
-    padding: 0px 48px 0px 48px;
-    line-height: 150%
-}
-
-div.para h1 {
-    text-align: center;
-    letter-spacing: 5px;
-}
-
-div#footer {
-    text-align: center;
-    color: white;
-    font-family: roboto;
-    font-size: 75%;
-    font-style: italic;
+#toolbar {
+    background-color: #2196F3;
     width: 100%;
+    height: 56px;
+    box-shadow: 0px 2px 8px 2px rgba(0, 0, 0, 0.19);
+    position: fixed;
+    top: 0;
+}
+
+#subreddit {
+    background-color: #2196F3;
+    border: solid 3px #2196F3;
+    width: 200px;
+    border-radius: 3px;
+    transition: border 0.3s;
+    font-size: 20px;
+    color: white;
+    display: block;
+    vertical-align: middle;
+    line-height: 30px;
+    margin: 8px 144px;
+    text-align: center;
+    transition: background-color 0.5s;
+}
+
+#subreddit:focus {
+    background-color: #64B5F6;
+}
+
+#cardholder {
+    padding-top: 56px;
+}
+
+.card {
+    width: 50%;
+    margin: 24px auto 24px auto;
+    align-self: center;
+    box-shadow: 0px 2px 8px 2px rgba(0, 0, 0, 0.19);
+    padding: 24px;
+}
+
+.cardtitle {
+    font-size: 30px;
+    font-family: roboto;
+    margin: 0px;
+    color: darkslategray;
+    margin-bottom: 16px;
 }
