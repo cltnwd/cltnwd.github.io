@@ -2,10 +2,10 @@ function loadReddit(sub) {
 
     // json from this url
     var apiurl;
-    if (sub != "")
-        apiurl = "http://www.reddit.com/r/" + sub + ".json";
-    else
+    if (sub == "frontpage")
         apiurl = "http://www.reddit.com/.json";
+    else
+        apiurl = "http://www.reddit.com/r/" + sub + ".json";
 
     $.getJSON(apiurl, function (json) {
 
