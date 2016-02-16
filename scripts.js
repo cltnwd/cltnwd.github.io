@@ -1,7 +1,11 @@
 function loadReddit(sub) {
 
     // json from this url
-    var apiurl = "http://www.reddit.com/r/" + sub + ".json";
+    var apiurl;
+    if (sub != "")
+        apiurl = "http://www.reddit.com/r/" + sub + ".json";
+    else
+        apiurl = "http://www.reddit.com/.json";
 
     $.getJSON(apiurl, function (json) {
 
