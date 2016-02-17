@@ -51,3 +51,12 @@ body {
     color: darkslategray;
     margin-bottom: 16px;
 }
+
+.row {
+    margin: 0px 24px;
+}
+
+.container {
+    padding-top: 66px;
+    padding-bottom: 8px;
+}
