@@ -31,7 +31,7 @@ function loadReddit(sub) {
             try {
                 thumb = obj.preview.images[0].source.url;
             } catch (e) {
-                thumb = "http://vignette1.wikia.nocookie.net/unitedchans/images/9/97/Doge.jpg/revision/latest?cb=20130824202237";
+                thumb = "";
             }
 
             var titleid = "title" + (i + 1);
@@ -40,6 +40,8 @@ function loadReddit(sub) {
                 document.getElementById(titleid).innerHTML = title;
             if (thumb != null)
                 document.getElementById(thumbid).src = thumb;
+
+            document.getElementById(titleid).href = exturl;
 
         }
     })
