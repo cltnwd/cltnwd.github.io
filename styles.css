@@ -22,6 +22,13 @@ body {
     line-height: 30px;
     text-align: center;
     transition: background-color 0.5s;
+    text-transform: lowercase;
+    letter-spacing: 3px;
+}
+
+#subreddit::selection {
+    background-color: white;
+    color: black;
 }
 
 #subreddit:focus {
@@ -30,10 +37,6 @@ body {
 
 #subreddit:hover {
     background-color: #64B5F6;
-}
-
-#cardholder {
-    padding-top: 0px;
 }
 
 .card {

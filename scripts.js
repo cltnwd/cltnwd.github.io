@@ -12,6 +12,27 @@ function loadReddit(sub) {
         // put results in an array
         var listing = json.data.children;
 
+        // get the card container
+        var cardholder = document.getElementById("cardholder");
+
+        // add n cards to container
+        for (var i = 0; i < listing.length; i++) {
+
+            // creates a card
+            var card = document.createElement("div");
+            card.className = "row";
+            card.innerHTML = "<div id='card' class='col-xs-12 card'><h5 class='cardtitle'><a class='link' id='title' href=''></a></h5>";
+
+            // append card to cardholder
+            cardholder.appendChild(card);
+        }
+
+        // get all cards
+        var linkselector = document.getElementsByClassName('link');
+        var imgselector = document.getElementsByClassName('thumb');
+        var cardselector = document.getElementsByClassName('card');
+
+        // pull data for each card
         for (var i = 0; i < listing.length; i++) {
 
             // store some data
@@ -34,14 +55,28 @@ function loadReddit(sub) {
                 thumb = "";
             }
 
-            var titleid = "title" + (i + 1);
-            var thumbid = "thumb" + (i + 1);
-            if (title != null)
-                document.getElementById(titleid).innerHTML = title;
-            if (thumb != null)
-                document.getElementById(thumbid).src = thumb;
+            linkselector[i].innerHTML = title;
 
-            document.getElementById(titleid).href = exturl;
+            // create img if it needs on and add it to card
+            if (thumb != "") {
+
+                if (cardselector[i].innerHTML.indexOf("img") == -1) {
+                    var img = document.createElement('img');
+                    img.className = "thumb";
+                    img.id = "thumb";
+                    img.style.cssText = "width:100%; height:auto";
+                    img.src = thumb;
+                }
+
+                img.src = thumb;
+
+                cardselector[i].appendChild(img);
+
+
+            }
+
+            //imgselector[i].src = thumb;
+            linkselector[i].href = exturl;
 
         }
     })
@@ -55,6 +90,7 @@ $(document).ready(function () {
     $('.subredditarea').keydown(function (event) {
         if (event.keyCode == 13) {
             var sub = $('#subreddit').val();
+            document.getElementById("cardholder").innerHTML = "";
             loadReddit(sub);
             return false;
         }
