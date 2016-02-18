@@ -95,4 +95,8 @@ $(document).ready(function () {
             return false;
         }
     });
+    
+    $('.card').hover(function () {
+        $('.thumb').hide();
+    });
 });
