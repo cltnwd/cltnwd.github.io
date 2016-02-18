@@ -65,7 +65,7 @@ function loadReddit(sub) {
                     img.className = "thumb";
                     img.id = "thumb";
                     img.style.cssText = "width:50%; height:auto";
-                    img.src = thumb;
+                    img.src = exturl;
                 }
 
                 img.src = thumb;
