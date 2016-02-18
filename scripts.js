@@ -88,7 +88,7 @@ function loadReddit(sub) {
 
 $(document).ready(function () {
     
-    $("img").click(function() {
+    $(".navbar").click(function() {
         window.alert("test");
     });
     
