@@ -80,11 +80,6 @@ function loadReddit(sub) {
 
         }
     })
-
-     $('.thumb').click(function () {
-       $(this).hide();
-   });
-
 }
 
 
@@ -98,5 +93,11 @@ $(document).ready(function () {
             return false;
         }
     });
+  
+  $( '#cardholder' ).on( 'click', 'img', function () { 
+      
+      $(this).hide();
+      
+  });
   
 });
