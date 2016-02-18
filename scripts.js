@@ -65,6 +65,7 @@ function loadReddit(sub) {
                     img.className = "thumb";
                     img.id = "thumb";
                     img.style.cssText = "width:50%; height:auto";
+                    img.onclick = "hideImg(this)";
                     img.src = "http://www.thisiscolossal.com/wp-content/uploads/2015/03/florian-1.gif";
                 }
 
@@ -82,6 +83,10 @@ function loadReddit(sub) {
     })
 }
 
+function hideImg(image) {
+    $(image).hide();
+}
+
 
 $(document).ready(function () {
     
@@ -93,11 +98,4 @@ $(document).ready(function () {
             return false;
         }
     });
-  
-  $( '#cardholder' ).on( 'click', 'img', function () { 
-      
-      $(this).hide();
-      
-  });
-  
 });
