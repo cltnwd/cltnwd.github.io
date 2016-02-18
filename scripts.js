@@ -68,7 +68,7 @@ function loadReddit(sub) {
                     img.src = "http://www.thisiscolossal.com/wp-content/uploads/2015/03/florian-1.gif";
                 }
 
-                img.src = exturl;
+                img.src = exturl.replace(".gifv", ".gif");
 
                 cardselector[i].appendChild(img);
 
