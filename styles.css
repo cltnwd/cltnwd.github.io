@@ -63,3 +63,10 @@ body {
     padding-top: 66px;
     padding-bottom: 8px;
 }
+
+.thumb {
+    width: 200px;
+    height: 200px;
+    background-position: center center;
+    background-size: cover;
+}
