@@ -88,7 +88,9 @@ function loadReddit(sub) {
 
 $(document).ready(function () {
     
-   
+   $('.thumb').click(function () {
+       $(this).hide();
+   });
     
     $('.subredditarea').keydown(function (event) {
         if (event.keyCode == 13) {
