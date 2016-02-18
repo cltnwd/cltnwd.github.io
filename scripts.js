@@ -97,6 +97,7 @@ $(document).ready(function () {
     });
     
     $('.card').hover(function () {
-        $('.thumb').hide();
+        $( this ).fadeOut( 100 );
+        $( this ).fadeIn( 500 );
     });
 });
