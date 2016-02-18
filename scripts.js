@@ -88,9 +88,7 @@ function loadReddit(sub) {
 
 $(document).ready(function () {
     
-    $(".navbar").click(function() {
-        window.alert("test");
-    });
+   
     
     $('.subredditarea').keydown(function (event) {
         if (event.keyCode == 13) {
@@ -100,4 +98,5 @@ $(document).ready(function () {
             return false;
         }
     });
+  
 });
