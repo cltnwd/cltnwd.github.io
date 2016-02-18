@@ -95,9 +95,4 @@ $(document).ready(function () {
             return false;
         }
     });
-    
-    $('.card').hover(function () {
-        $('.thumb').fadeOut( 100 );
-        $('.thumb').fadeIn( 500 );
-    });
 });
