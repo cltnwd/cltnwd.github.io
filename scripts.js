@@ -81,16 +81,14 @@ function loadReddit(sub) {
         }
     })
 
-
+     $('.thumb').click(function () {
+       $(this).hide();
+   });
 
 }
 
 
 $(document).ready(function () {
-    
-   $('.thumb').click(function () {
-       $(this).hide();
-   });
     
     $('.subredditarea').keydown(function (event) {
         if (event.keyCode == 13) {
