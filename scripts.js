@@ -87,6 +87,11 @@ function loadReddit(sub) {
 
 
 $(document).ready(function () {
+    
+    $("img").click(function() {
+        window.alert("test");
+    });
+    
     $('.subredditarea').keydown(function (event) {
         if (event.keyCode == 13) {
             var sub = $('#subreddit').val();
@@ -96,9 +101,3 @@ $(document).ready(function () {
         }
     });
 });
-
-$(function() {
-    $("img").click(function() {
-        window.alert("test");
-    });
-})
