@@ -65,7 +65,7 @@ function loadReddit(sub) {
                     img.className = "thumb";
                     img.id = "thumb";
                     img.style.cssText = "width:50%; height:auto";
-                    img.src = exturl;
+                    img.src = "http://www.thisiscolossal.com/wp-content/uploads/2015/03/florian-1.gif";
                 }
 
                 img.src = thumb;
