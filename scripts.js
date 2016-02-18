@@ -98,7 +98,7 @@ $(document).ready(function () {
 });
 
 $(function() {
-    $('.card').click(function() {
+    $("img").click(function() {
         window.alert("test");
     });
 })
