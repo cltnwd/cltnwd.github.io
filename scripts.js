@@ -84,7 +84,9 @@ function loadReddit(sub) {
 }
 
 function hideImg(image) {
-    $(image).hide();
+    $(image).slideToggle("slow", function() {
+        //TODO: something
+    });
 }
 
 
