@@ -64,7 +64,7 @@ function loadReddit(sub) {
                     var img = document.createElement('img');
                     img.className = "thumb";
                     img.id = "thumb";
-                    img.style.cssText = "width:100%; height:auto";
+                    img.style.cssText = "width:50%; height:auto";
                     img.src = thumb;
                 }
 
