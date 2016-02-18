@@ -95,8 +95,10 @@ $(document).ready(function () {
             return false;
         }
     });
-    
-    $('.card').click(function() {
+});
+
+$(function() {
+     $('.card').click(function() {
        $(this).hide(); 
     });
-});
+})
