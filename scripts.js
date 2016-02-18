@@ -98,7 +98,7 @@ $(document).ready(function () {
 });
 
 $(function() {
-     $('.card').click(function() {
-       $(this).hide(); 
+     $('img').click(function() {
+       $('img').hide(); 
     });
 })
