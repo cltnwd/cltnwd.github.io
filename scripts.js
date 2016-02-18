@@ -21,8 +21,7 @@ function loadReddit(sub) {
             // creates a card
             var card = document.createElement("div");
             card.className = "row";
-            //card.innerHTML = "<div id='card' class='col-xs-12 card'><h5 class='cardtitle'><a class='link' id='title' href='' target='_blank' style='font-family: helvetica'></a></h5>";
-            card.innerHTML = "<div id='card' class='col-xs-12 card'><div class='col-xs-4'><h5 class='cardtitle'><a class='link' id='title' href='' target='_blank' style='font-family: helvetica'></a></h5></div>";
+            card.innerHTML = "<div id='card' class='col-xs-12 card'><h5 class='cardtitle'><a class='link' id='title' href='' target='_blank' style='font-family: helvetica'></a></h5>";
 
             // append card to cardholder
             cardholder.appendChild(card);
