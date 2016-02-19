@@ -73,7 +73,6 @@ body {
     padding-bottom: 8px;
 }
 
-<<<<<<< HEAD
 .score {
     color: green;
     display: inline;
@@ -99,9 +98,9 @@ body {
     width: 100px;
     height: 100px;
 }
-=======
+
 .thumb {
-   display: inline-block;
+    display: inline-block;
     width: 200px;
     height: 200px;
     margin: 5px;
@@ -109,4 +108,3 @@ body {
     background-position: center center;
     background-size: cover;
 }
->>>>>>> origin/master
