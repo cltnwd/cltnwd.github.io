@@ -23,7 +23,11 @@ function loadReddit(sub) {
             // creates a card
             var card = document.createElement("div");
             card.className = "row";
+<<<<<<< HEAD
             card.innerHTML = document.getElementById('cardtmp').innerHTML;
+=======
+            card.innerHTML = "<div id='card' class='col-xs-12 card'><h5 class='cardtitle'><a class='link' id='title' href='' target='_blank' style='font-family: helvetica'></a></h5>";
+>>>>>>> origin/master
 
             // append card to cardholder
             cardholder.appendChild(card);
@@ -59,6 +63,7 @@ function loadReddit(sub) {
                 thumb = "";
             }
 
+<<<<<<< HEAD
             linkselector[i].innerHTML = obj.title;
 
             //            // create img if it needs on and add it to card
@@ -77,6 +82,24 @@ function loadReddit(sub) {
             //
             //
             //            }
+=======
+            linkselector[i].innerHTML = title;
+
+            // create img if it needs on and add it to card
+            if (thumb != "") {
+
+                if (cardselector[i].innerHTML.indexOf("img") == -1) {
+                    var img = document.createElement('img');
+                    img.className = "thumb";
+                    img.id = "thumb";
+                    img.onclick = "hideImg(this)";
+                    img.src = "http://www.thisiscolossal.com/wp-content/uploads/2015/03/florian-1.gif";
+                }
+
+                img.src = thumb; //exturl.replace(".gifv", ".gif");
+
+                cardselector[i].appendChild(img);
+>>>>>>> origin/master
 
             linkselector[i].href = exturl;
             scoreselector[i].innerHTML = votes;
@@ -89,9 +112,17 @@ function loadReddit(sub) {
 
         }
     })
+<<<<<<< HEAD
+=======
+}
+
+function hideImg(image) {
+    $(image).hide();
+>>>>>>> origin/master
 }
 
 $(document).ready(function () {
+    
     $('.subredditarea').keydown(function (event) {
         if (event.keyCode == 13) {
             var sub = $('#subreddit').val();
@@ -100,6 +131,7 @@ $(document).ready(function () {
             return false;
         }
     });
+<<<<<<< HEAD
 
     $("#expander").click(function () {
 
@@ -111,3 +143,6 @@ $(document).ready(function () {
         })
     });
 });
+=======
+});
+>>>>>>> origin/master
