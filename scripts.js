@@ -101,13 +101,10 @@ $(document).ready(function () {
         }
     });
 
-    $("#expander").click(function () {
+    $("#rrr").click(function () {
 
-        // TODO: expand photos
-        var imgselector = document.getElementsByClassName('thumb');
-
-        $("#thumb").fadeToggle("fade", function () {
-
-        })
+        $("html, body").animate({
+            scrollTop: 0
+        }, "slow");
     });
 });
