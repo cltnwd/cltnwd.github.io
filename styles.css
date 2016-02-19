@@ -45,21 +45,56 @@ body {
     padding: 24px;
     margin-top: 12px;
     margin-bottom: 12px;
+    border-radius: 4px;
 }
 
 .cardtitle {
-    font-size: 30px;
     font-family: roboto;
     margin: 0px;
     color: darkslategray;
     margin-bottom: 16px;
 }
 
+.link {
+    color: darkslategrey;
+}
+
 .row {
     margin: 0px 24px;
+}
+
+.link:hover {
+    color: dodgerblue;
+    text-decoration: none;
 }
 
 .container {
     padding-top: 66px;
     padding-bottom: 8px;
+}
+
+.score {
+    color: green;
+    display: inline;
+}
+
+.sameline {
+    display: inline;
+}
+
+.comments {
+    color: #757575;
+    display: inline;
+    margin-left: 10px;
+}
+
+.comments:hover {
+    color: dodgerblue;
+    cursor: pointer;
+    text-decoration: none;
+}
+
+.thumby {
+    width: 100px;
+    height: 100px;
 }

@@ -2,9 +2,11 @@ function loadReddit(sub) {
 
     // json from this url
     var apiurl;
-    if (sub == "frontpage")
+    if (sub == "frontpage" || sub == "") {
+        sub = "frontpage";
+        document.getElementById('subreddit').value = sub;
         apiurl = "http://www.reddit.com/.json";
-    else
+    } else
         apiurl = "http://www.reddit.com/r/" + sub + ".json";
 
     $.getJSON(apiurl, function (json) {
@@ -21,7 +23,7 @@ function loadReddit(sub) {
             // creates a card
             var card = document.createElement("div");
             card.className = "row";
-            card.innerHTML = "<div id='card' class='col-xs-12 card'><h5 class='cardtitle'><a class='link' id='title' href=''></a></h5>";
+            card.innerHTML = document.getElementById('cardtmp').innerHTML;
 
             // append card to cardholder
             cardholder.appendChild(card);
@@ -31,6 +33,8 @@ function loadReddit(sub) {
         var linkselector = document.getElementsByClassName('link');
         var imgselector = document.getElementsByClassName('thumb');
         var cardselector = document.getElementsByClassName('card');
+        var scoreselector = document.getElementsByClassName('score');
+        var commentselector = document.getElementsByClassName('comments');
 
         // pull data for each card
         for (var i = 0; i < listing.length; i++) {
@@ -44,8 +48,8 @@ function loadReddit(sub) {
             // store the link
             var exturl = obj.url;
 
-            // store title
-            var title = obj.title;
+            // gilded?
+            var gilded = obj.gilded;
 
             var thumb;
             // get thumb url
@@ -55,36 +59,37 @@ function loadReddit(sub) {
                 thumb = "";
             }
 
-            linkselector[i].innerHTML = title;
+            linkselector[i].innerHTML = obj.title;
 
-            // create img if it needs on and add it to card
-            if (thumb != "") {
+            //            // create img if it needs on and add it to card
+            //            if (thumb != "") {
+            //
+            //                if (cardselector[i].innerHTML.indexOf("img") == -1) {
+            //                    var img = document.createElement('img');
+            //                    img.className = "thumb";
+            //                    img.id = "thumb";
+            //                    img.src = thumb;
+            //                    img.style.cssText = "width:100%; height: auto;";
+            //                }
+            //
+            //
+            //                cardselector[i].appendChild(img);
+            //
+            //
+            //            }
 
-                if (cardselector[i].innerHTML.indexOf("img") == -1) {
-                    var img = document.createElement('img');
-                    img.className = "thumb";
-                    img.id = "thumb";
-                    img.style.cssText = "width:100%; height:auto";
-                    img.src = thumb;
-                }
-
-                img.src = thumb;
-
-                cardselector[i].appendChild(img);
-
-
-            }
-
-            //imgselector[i].src = thumb;
             linkselector[i].href = exturl;
+            scoreselector[i].innerHTML = votes;
+            commentselector[i].href = "http://www.reddit.com/" + obj.permalink;
+            commentselector[i].innerHTML = obj.num_comments + " comments";
+
+            if (gilded > 0) {
+                cardselector[i].style.backgroundColor = "#FFF9C4";
+            }
 
         }
     })
-
-
-
 }
-
 
 $(document).ready(function () {
     $('.subredditarea').keydown(function (event) {
@@ -94,5 +99,15 @@ $(document).ready(function () {
             loadReddit(sub);
             return false;
         }
+    });
+
+    $("#expander").click(function () {
+
+        // TODO: expand photos
+        var imgselector = document.getElementsByClassName('thumb');
+
+        $("#thumb").fadeToggle("fade", function () {
+
+        })
     });
 });
