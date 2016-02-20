@@ -92,7 +92,7 @@ function loadReddit(sub) {
 }
 
 $(document).ready(function () {
-    $('.subredditarea').keydown(function (event) {
+    $('#subreddit').keydown(function (event) {
         if (event.keyCode == 13) {
             var sub = $('#subreddit').val();
             document.getElementById("cardholder").innerHTML = "";
