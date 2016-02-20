@@ -107,4 +107,8 @@ $(document).ready(function () {
             scrollTop: 0
         }, "slow");
     });
+
+    $("#search").width(
+        $(window).width - $("#rrr").width
+    );
 });
