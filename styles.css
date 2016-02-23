@@ -23,7 +23,7 @@ body {
     transition: background-color 0.5s;
     text-transform: lowercase;
     letter-spacing: 2px;
-    font-family: roboto;
+    font-family: helvetica;
     padding-left: 8px;
     vertical-align: top;
     margin-top: 7px;
@@ -36,7 +36,7 @@ body {
     color: white;
     letter-spacing: 3px;
     font-weight: bold;
-    font-family: roboto;
+    font-family: helvetica;
     position: relative;
     float: left;
 }
@@ -78,7 +78,7 @@ body {
 }
 
 .cardtitle {
-    font-family: roboto;
+    font-family: helvetica;
     margin: 0px;
     color: darkslategray;
     margin-bottom: 16px;
