@@ -111,4 +111,13 @@ $(document).ready(function () {
     $("#search").width(
         $(window).width - $("#rrr").width
     );
+
+    "use strict";
+
+
+
+    $(".hamburger").click(function () {
+        (this.classList.contains("is-active") === true) ? this.classList.remove("is-active"): this.classList.add("is-active");
+    })
+
 });
