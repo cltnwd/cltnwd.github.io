@@ -18,6 +18,11 @@ function loadReddit(sub) {
         // get the card container
         var cardholder = document.getElementById("cardholder");
 
+        // starts card list over
+        while (cardholder.firstChild) {
+            cardholder.removeChild(cardholder.firstChild);
+        }
+
         // add n cards to container
         for (var i = 0; i < listing.length; i++) {
 
