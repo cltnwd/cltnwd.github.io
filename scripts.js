@@ -1,6 +1,6 @@
 function loadReddit(sub) {
     sub = sub.toLowerCase();
-    
+
     // json from this url
     var apiurl;
     if (sub == "frontpage" || sub == "") {
@@ -196,6 +196,22 @@ $(document).ready(function () {
     $('.sublist_link').click(function () {
         var sub = $(this).html();
         loadReddit(sub);
+
+        var hamburger = document.getElementById("hamburger");
+        var sublist = document.getElementById("sublist");
+
+        if (hamburger.classList.contains("is-active") === true) {
+            hamburger.classList.remove("is-active");
+        }
+
+        if (sublist.classList.contains("is-shown") === true) {
+            sublist.classList.remove("is-shown");
+        }
+
+        $("html, body").animate({
+            scrollTop: 0
+        }, "slow");
+
     });
 
 });
