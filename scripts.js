@@ -1,5 +1,6 @@
 function loadReddit(sub) {
-
+    sub = sub.toLowerCase();
+    
     // json from this url
     var apiurl;
     if (sub == "frontpage" || sub == "") {
@@ -36,6 +37,9 @@ function loadReddit(sub) {
         var scoreselector = document.getElementsByClassName('score');
         var commentselector = document.getElementsByClassName('comments');
 
+
+
+
         // pull data for each card
         for (var i = 0; i < listing.length; i++) {
 
@@ -51,6 +55,9 @@ function loadReddit(sub) {
             // gilded?
             var gilded = obj.gilded;
 
+            // sub
+            var sub = obj.subreddit;
+
             var thumb;
             // get thumb url
             try {
@@ -60,24 +67,6 @@ function loadReddit(sub) {
             }
 
             linkselector[i].innerHTML = obj.title;
-
-            //            // create img if it needs on and add it to card
-            //            if (thumb != "") {
-            //
-            //                if (cardselector[i].innerHTML.indexOf("img") == -1) {
-            //                    var img = document.createElement('img');
-            //                    img.className = "thumb";
-            //                    img.id = "thumb";
-            //                    img.src = thumb;
-            //                    img.style.cssText = "width:100%; height: auto;";
-            //                }
-            //
-            //
-            //                cardselector[i].appendChild(img);
-            //
-            //
-            //            }
-
             linkselector[i].href = exturl;
             scoreselector[i].innerHTML = votes;
             commentselector[i].href = "http://www.reddit.com/" + obj.permalink;
@@ -86,6 +75,8 @@ function loadReddit(sub) {
             if (gilded > 0) {
                 cardselector[i].style.backgroundColor = "#FFF9C4";
             }
+
+
 
         }
     })
@@ -115,9 +106,96 @@ $(document).ready(function () {
     "use strict";
 
 
-
     $(".hamburger").click(function () {
+
+
+        // activates hamburger menu
         (this.classList.contains("is-active") === true) ? this.classList.remove("is-active"): this.classList.add("is-active");
+
+
+        // activates sub list
+        var sublist = document.getElementById("sublist");
+
+
+        (sublist.classList.contains("is-shown") === true) ? sublist.classList.remove("is-shown"): sublist.classList.add("is-shown");
+
+
+
+
     })
+
+    // create list of default subs
+    var defaultsubs = ['FRONTPAGE', 'ANNOUNCEMENTS', 'ART', 'ASKREDDIT'
+, 'ASKSCIENCE'
+, 'AWW'
+, 'BLOG'
+, 'BOOKS'
+, 'CREEPY'
+, 'DATAISBEAUTIFUL'
+, 'DIY'
+, 'DOCUMENTARIES'
+, 'EARTHPORN'
+, 'EXPLAINLIKEIMFIVE'
+, 'FITNESS'
+, 'FOOD'
+, 'FUNNY'
+, 'FUTUROLOGY'
+, 'GADGETS'
+, 'GAMING'
+, 'GETMOTIVATED'
+, 'GIFS'
+, 'HISTORY'
+, 'IAMA'
+, 'INTERNETISBEAUTIFUL'
+, 'JOKES'
+, 'LIFEPROTIPS'
+, 'LISTENTOTHIS'
+, 'MILDLYINTERESTING'
+, 'MOVIES'
+, 'MUSIC'
+, 'NEWS'
+, 'NOSLEEP'
+, 'NOTTHEONION'
+, 'OLDSCHOOLCOOL'
+, 'PERSONALFINANCE'
+, 'PHILOSOPHY'
+, 'PHOTOSHOPBATTLES'
+, 'PICS'
+, 'SCIENCE'
+, 'SHOWERTHOUGHTS'
+, 'SPACE'
+, 'SPORTS'
+, 'TELEVISION'
+, 'TIFU'
+, 'TODAYILEARNED'
+, 'TWOXCHROMOSOMES'
+, 'UPLIFTINGNEWS'
+, 'VIDEOS'
+, 'WORLDNEWS'
+, 'WRITINGPROMPTS'];
+
+    //    // get sublist
+    var sublist = document.getElementById("listofsubs");
+    for (var n = 0; n < defaultsubs.length; n++) {
+        // create list item
+        var newsub = document.createElement("li");
+        newsub.classList.add("sublist_item");
+
+        // create link
+        var sublink = document.createElement("button");
+        sublink.classList.add("sublist_link");
+        sublink.setAttribute("id", "sublist_link");
+        sublink.innerHTML = defaultsubs[n];
+
+        newsub.appendChild(sublink);
+
+        sublist.appendChild(newsub);
+
+    }
+
+    $('.sublist_link').click(function () {
+        var sub = $(this).html();
+        loadReddit(sub);
+    });
 
 });
