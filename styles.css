@@ -183,11 +183,10 @@ body {
 }
 
 .container {
-    padding-top: 66px;
     padding-bottom: 8px;
     padding-left: 16px;
     padding-right: 16px;
-    top: 50px;
+    margin-top: 50px;
 }
 
 .score {
