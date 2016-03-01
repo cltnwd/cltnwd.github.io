@@ -1,5 +1,3 @@
-# cltnwd.github.io
-
 <h4>Reddit! (2016 edition)</h4>
 
 <p>The goal of this site is to give Reddit a facelift. 
