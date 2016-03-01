@@ -124,62 +124,12 @@ $(document).ready(function () {
 
         (sublist.classList.contains("is-shown") === true) ? sublist.classList.remove("is-shown"): sublist.classList.add("is-shown");
 
-
-
-
     })
 
     // create list of default subs
-    var defaultsubs = ['FRONTPAGE', 'ANNOUNCEMENTS', 'ART', 'ASKREDDIT'
-, 'ASKSCIENCE'
-, 'AWW'
-, 'BLOG'
-, 'BOOKS'
-, 'CREEPY'
-, 'DATAISBEAUTIFUL'
-, 'DIY'
-, 'DOCUMENTARIES'
-, 'EARTHPORN'
-, 'EXPLAINLIKEIMFIVE'
-, 'FITNESS'
-, 'FOOD'
-, 'FUNNY'
-, 'FUTUROLOGY'
-, 'GADGETS'
-, 'GAMING'
-, 'GETMOTIVATED'
-, 'GIFS'
-, 'HISTORY'
-, 'IAMA'
-, 'INTERNETISBEAUTIFUL'
-, 'JOKES'
-, 'LIFEPROTIPS'
-, 'LISTENTOTHIS'
-, 'MILDLYINTERESTING'
-, 'MOVIES'
-, 'MUSIC'
-, 'NEWS'
-, 'NOSLEEP'
-, 'NOTTHEONION'
-, 'OLDSCHOOLCOOL'
-, 'PERSONALFINANCE'
-, 'PHILOSOPHY'
-, 'PHOTOSHOPBATTLES'
-, 'PICS'
-, 'SCIENCE'
-, 'SHOWERTHOUGHTS'
-, 'SPACE'
-, 'SPORTS'
-, 'TELEVISION'
-, 'TIFU'
-, 'TODAYILEARNED'
-, 'TWOXCHROMOSOMES'
-, 'UPLIFTINGNEWS'
-, 'VIDEOS'
-, 'WORLDNEWS'
-, 'WRITINGPROMPTS'];
+    var defaultsubs = ['FRONTPAGE', 'ANNOUNCEMENTS', 'ART', 'ASKREDDIT', 'ASKSCIENCE', 'AWW', 'BLOG', 'BOOKS', 'CREEPY', 'DATAISBEAUTIFUL', 'DIY', 'DOCUMENTARIES', 'EARTHPORN', 'EXPLAINLIKEIMFIVE', 'FITNESS', 'FOOD', 'FUNNY', 'FUTUROLOGY', 'GADGETS', 'GAMING', 'GETMOTIVATED', 'GIFS', 'HISTORY', 'IAMA', 'INTERNETISBEAUTIFUL', 'JOKES', 'LIFEPROTIPS', 'LISTENTOTHIS', 'MILDLYINTERESTING', 'MOVIES', 'MUSIC', 'NEWS', 'NOSLEEP', 'NOTTHEONION', 'OLDSCHOOLCOOL', 'PERSONALFINANCE', 'PHILOSOPHY', 'PHOTOSHOPBATTLES', 'PICS', 'SCIENCE', 'SHOWERTHOUGHTS', 'SPACE', 'SPORTS', 'TELEVISION', 'TIFU', 'TODAYILEARNED', 'TWOXCHROMOSOMES', 'UPLIFTINGNEWS', 'VIDEOS', 'WORLDNEWS', 'WRITINGPROMPTS'];
 
-    //    // get sublist
+    // get sublist
     var sublist = document.getElementById("listofsubs");
     for (var n = 0; n < defaultsubs.length; n++) {
         // create list item
@@ -212,6 +162,7 @@ $(document).ready(function () {
         if (sublist.classList.contains("is-shown") === true) {
             sublist.classList.remove("is-shown");
         }
+
 
         $("html, body").animate({
             scrollTop: 0
