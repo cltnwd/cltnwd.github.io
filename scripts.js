@@ -25,6 +25,7 @@ function loadReddit(sub) {
             cardholder.removeChild(cardholder.firstChild);
         }
 
+
         // add n cards to container
         for (var i = 0; i < listing.length; i++) {
 
