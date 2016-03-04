@@ -23,7 +23,7 @@
         <div id='card' class='col-xs-12 card'>
             <h3 class='cardtitle'><a class='link' id='title' target='_blank' href=''>this should not appear</a></h3>
             <span> 
-                <h4 class='score'>1000</h4>
+                <h4 class='score'>error</h4>
                 <h4 class='sameline'><a class='comments'>comments</a></h4>
             </span>
 
@@ -42,16 +42,21 @@
                 <span>toggle menu</span>
             </button>
 
-            <div id="search">
-                <input type="text" id="subreddit" value="frontpage">
+            <div id="titleholder">
+                <p id="title">Frontpage</p>
             </div>
+
+
 
         </div>
 
         <nav id="sublist" class="slideout_panel" onmouseover="document.body.style.overflow='hidden';" onmouseout="document.body.style.overflow='auto';">
 
             <ul id="listofsubs" class="sublist_items">
-
+                <li class="topitem">
+                    <input type="text" id="subreddit" class="sub_search card" placeholder="Subreddit...">
+                    <button class="search_button" onclick="subSearch()">GO</button>
+                </li>
             </ul>
         </nav>
 

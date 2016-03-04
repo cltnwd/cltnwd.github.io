@@ -5,10 +5,12 @@ function loadReddit(sub) {
     var apiurl;
     if (sub == "frontpage" || sub == "") {
         sub = "frontpage";
-        document.getElementById('subreddit').value = sub;
         apiurl = "http://www.reddit.com/.json";
     } else
         apiurl = "http://www.reddit.com/r/" + sub + ".json";
+
+    var title = document.getElementById('title');
+    title.innerHTML = sub;
 
     $.getJSON(apiurl, function (json) {
 
@@ -87,29 +89,46 @@ function loadReddit(sub) {
     })
 }
 
+function subSearch() {
+    var sub = $('#subreddit').val();
+    var sublist = document.getElementById("sublist");
+
+    if (sub != "") {
+
+        // hide the panel
+        if (sublist.classList.contains("is-shown") === true) {
+            sublist.classList.remove("is-shown");
+        }
+
+        loadReddit(sub);
+    }
+}
+
 $(document).ready(function () {
+
     $('#subreddit').keydown(function (event) {
+
+        // on enter press
         if (event.keyCode == 13) {
             var sub = $('#subreddit').val();
-            document.getElementById("cardholder").innerHTML = "";
+            var sublist = document.getElementById("sublist");
+
+
+            // hide the panel
+            if (sublist.classList.contains("is-shown") === true) {
+                sublist.classList.remove("is-shown");
+            }
+
+            // toggle hamburger
+            var ham = document.getElementById('hamburger');
+            if (ham.classList.contains("is-active") === true) {
+                ham.classList.remove("is-active");
+            }
+
             loadReddit(sub);
             return false;
         }
     });
-
-    $("#rrr").click(function () {
-
-        $("html, body").animate({
-            scrollTop: 0
-        }, "slow");
-    });
-
-    $("#search").width(
-        $(window).width - $("#rrr").width
-    );
-
-    "use strict";
-
 
     $(".hamburger").click(function () {
 
@@ -169,5 +188,4 @@ $(document).ready(function () {
         }, "slow");
 
     });
-
 });

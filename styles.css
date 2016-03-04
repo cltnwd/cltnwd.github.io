@@ -11,7 +11,7 @@ body {
     height: 50px;
 }
 
-#subreddit {
+#subreddit(removethis) {
     background-color: #2196F3;
     border: solid 3px #2196F3;
     border-radius: 5px;
@@ -140,16 +140,16 @@ body {
     cursor: pointer;
 }
 
-#subreddit::selection {
+#subreddit(removethis)::selection {
     background-color: white;
     color: black;
 }
 
-#subreddit:focus {
+#subreddit(removethis):focus {
     background-color: #64B5F6;
 }
 
-#subreddit:hover {
+#subreddit(removethis):hover {
     background-color: #64B5F6;
 }
 
@@ -298,4 +298,43 @@ body {
 
 .slideout_panel.is-shown {
     transform: translateX(0px);
+}
+
+.topitem {
+    border-bottom: solid 1px rgba(0, 0, 0, 0.14);
+}
+
+.sub_search {
+    display: block;
+    color: gray;
+    margin: 12px 24px;
+    padding: 12px;
+    border: 0px;
+    border-radius: 4px;
+    background-color: white;
+    width: 204px;
+    text-align: left;
+    outline: none;
+    font-family: helvetica;
+    letter-spacing: 1px;
+    display: inline-block;
+}
+
+.search_button {
+    display: inline-block;
+    width: 36px;
+    height: 36px;
+    border: 0px;
+    border-radius: 36px;
+    margin: 0px -12px;
+    outline: 0px;
+    background-color: #2196F3;
+    color: white;
+}
+
+#titleholder p {
+    color: white;
+    line-height: 50px;
+    font-size: 20px;
+    margin: 0px 70px;
 }
