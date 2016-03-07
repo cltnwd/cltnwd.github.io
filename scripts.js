@@ -1,11 +1,17 @@
 function loadReddit(sub) {
     sub = sub.toLowerCase();
+    var searchbox = document.getElementById("subreddit");
+    searchbox.value = "";
 
     // json from this url
     var apiurl;
     if (sub == "frontpage" || sub == "") {
         sub = "frontpage";
         apiurl = "http://www.reddit.com/.json";
+    } else if (sub == '11101994') {
+        var subbutton = document.getElementById('subbutton');
+        sub = subbutton.innerHTML;
+        apiurl = "http://www.reddit.com/r/" + sub + ".json";
     } else
         apiurl = "http://www.reddit.com/r/" + sub + ".json";
 
@@ -44,9 +50,7 @@ function loadReddit(sub) {
         var cardselector = document.getElementsByClassName('card');
         var scoreselector = document.getElementsByClassName('score');
         var commentselector = document.getElementsByClassName('comments');
-
-
-
+        var subselector = document.getElementsByClassName('sub');
 
         // pull data for each card
         for (var i = 0; i < listing.length; i++) {
@@ -79,6 +83,15 @@ function loadReddit(sub) {
             scoreselector[i].innerHTML = votes;
             commentselector[i].href = "http://www.reddit.com/" + obj.permalink;
             commentselector[i].innerHTML = obj.num_comments + " comments";
+            subselector[i].innerHTML = "/r/" + sub;
+            subselector[i].addEventListener("click", function () {
+
+                // remove /r/ and reload page
+                var buttonsub = this.innerHTML;
+                buttonsub = buttonsub.replace("/r/", "");
+                scrollTop();
+                loadReddit(buttonsub);
+            });
 
             if (gilded > 0) {
                 cardselector[i].style.backgroundColor = "#FFF9C4";
@@ -126,6 +139,7 @@ $(document).ready(function () {
                 ham.classList.remove("is-active");
             }
 
+            scrollTop();
             loadReddit(sub);
             return false;
         }
@@ -184,9 +198,15 @@ $(document).ready(function () {
         }
 
 
-        $("html, body").animate({
-            scrollTop: 0
-        }, "slow");
+        scrollTop();
 
     });
+
 });
+
+// smooth scroll to top of page
+function scrollTop() {
+    $("html, body").animate({
+        scrollTop: 0
+    }, "slow");
+}
