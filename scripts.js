@@ -81,7 +81,7 @@ function loadReddit(sub) {
             linkselector[i].innerHTML = obj.title;
             linkselector[i].href = exturl;
             scoreselector[i].innerHTML = votes;
-            commentselector[i].href = "http://www.reddit.com/" + obj.permalink;
+            commentselector[i].href = "http://www.reddit.com" + obj.permalink;
             commentselector[i].innerHTML = obj.num_comments + " comments";
             subselector[i].innerHTML = "/r/" + sub;
             subselector[i].addEventListener("click", function () {
