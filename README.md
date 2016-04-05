@@ -1,4 +1,4 @@
-
+(complete rewrite in the works. using React and MDL, aka much cleaner and more efficient code)
 
 <h4>Reddit! (2016 edition)</h4>
 
