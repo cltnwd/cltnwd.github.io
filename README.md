@@ -1,4 +1,4 @@
-(complete rewrite in the works. using React and MDL, aka much cleaner and more efficient code)
+(complete rewrite in the works. using React and MDL. results in much cleaner and more efficient code, plus true material design)
 
 <h4>Reddit! (2016 edition)</h4>
 
