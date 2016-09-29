@@ -1,74 +1,34 @@
 <!DOCTYPE html>
-
-<html lang="en">
-
-<head>
-    
-    
-    <meta name="google-site-verification" content="NIFJFd9EhRVv8J4ce1Yc5Sdvvdcig6ILLbewCUnkJ6Q" />
-    
+<html>
+  <head>
     <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1 user-scalable=0">
-    <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
-    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.12.0/jquery.min.js"></script>
-    <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
+    <title>Reddit3</title>
+    <link rel="stylesheet" type="text/css" href="stylesheet.css" />
+  </head>
 
-    <!-- linked stylesheet -->
-    <link rel="stylesheet" href="styles.css">
+  <body>
 
-    <!-- tab title -->
-    <title>cltnwd</title>
-
-    <!-- favicon -->
-    <link rel="shortcut icon" href="favicon.ico">
-
-    <template id="cardtmp">
-        <div id='card' class='col-xs-12 card'>
-            <h4 class='cardtitle'><a class='link' id='title' target='_blank' href=''>if you are reading this, something is wrong</a></h4>
-            <span> 
-
-                <h5 class='score'>error</h5>
-                <h5 class='sameline'><a class='comments' target='_blank'>comments</a></h5>
-                <h5 class='sameline'><button id="subbutton" class='sub' type="button">subreddit</button></h5>
-            </span>
-
-        </div>
-    </template>
-
-</head>
-
-<body onload="loadReddit('frontpage')">
-
-    <div class="navbar navbar-fixed-top">
-
-        <div id="wrapper">
-
-            <button id="hamburger" class="hamburger hamburger--htla">
-                <span>toggle menu</span>
-            </button>
-
-            <div id="titleholder">
-                <p id="title">frontpage</p>
-            </div>
-        </div>
-
-        <nav id="sublist" class="slideout_panel" onmouseover="document.body.style.overflow='hidden';" onmouseout="document.body.style.overflow='auto';">
-
-            <ul id="listofsubs" class="sublist_items">
-                <li class="topitem">
-                    <input type="text" id="subreddit" class="sub_search" placeholder="Subreddit...">
-                    <button class="search_button" onclick="subSearch()"><img id="searchicon" src="assets/search.png"></button>
-                </li>
-            </ul>
-        </nav>
-
+    <div id="toolbar">
+        <div id="rrr">/r/frontpage</div>
+    </div>
+      
+    <!-- gets replaced by React -->
+    <div id="container"/>
+      <p>don't look here!</p>
     </div>
 
-    <div id="cardholder" class="container">
-    </div>
+    <!-- react source files -->
+    <!-- <script src="react-source/react.js"></script>
+    <script src="react-source/react-dom.js"></script> -->
+    <script src="https://unpkg.com/react@15.3.2/dist/react.min.js"></script>
+    <script src="https://unpkg.com/react-dom@15.3.2/dist/react-dom.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/babel-core/5.8.24/browser.min.js"></script>
 
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.0/jquery.min.js"></script>
-    <script src="scripts.js"></script>
-</body>
+    <!-- jquery -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
 
+    <!-- external react file -->
+    <script type="text/babel" src="components.js"></script>
+
+  </body>
 </html>
