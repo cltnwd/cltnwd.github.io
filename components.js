@@ -14,23 +14,6 @@ var Post = React.createClass({
         var title = this.props.post.title;
         var num_comments = this.props.post.num_comments;
         var selftext = this.props.post.selftext;
-        var preview = this.props.post.preview;
-
-        var source = "";
-        var imageSourceUrl = "";
-        var height = "";
-        var highwidth = "";
-
-        if (preview && preview.images) {
-            
-            source = preview.images[0].source;
-            imageSourceUrl = source.url;
-            height = source.height;
-            highwidth = source.width; 
-
-        }
-
-        console.log(imageSourceUrl);
 
         // prints Post scores
         if (gilded == 1) {
