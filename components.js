@@ -15,7 +15,7 @@ var Post = React.createClass({
         var num_comments = this.props.post.num_comments;
         var selftext = this.props.post.selftext;
 
-        // prints Post scores
+        // prints Post details
         if (gilded == 1) {
             return (
                 <div className="gold card">
