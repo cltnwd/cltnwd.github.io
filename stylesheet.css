@@ -51,18 +51,31 @@ body {
   background: #FFFDE7;
 }
 
-.card:hover {
+/*.card:hover {
   box-shadow: 0 14px 28px rgba(0,0,0,0.25), 0 10px 10px rgba(0,0,0,0.22);
-}
+}*/
 
 .commentslink {
   color: #424242;
   font-size: 14px;
+  text-decoration: none;
+}
+
+.commentslink:hover {
+	text-decoration: underline;
 }
 
 .postTitle {
   font-weight: bold;
   margin: 0px;
+  text-decoration: none;
+  color: black;
+  display: block;
+}
+
+.postTitle:hover {
+	
+	color: #2979FF; /* blue A400 */
 }
 
 /*.hamburger-menu {

@@ -12,15 +12,34 @@ var Post = React.createClass({
         var gilded = this.props.post.gilded;
         var score = this.props.post.score;
         var title = this.props.post.title;
+        var url = this.props.post.url;
         var num_comments = this.props.post.num_comments;
+        var comments_link = "http://www.reddit.com" + this.props.post.permalink;
         var selftext = this.props.post.selftext;
+        var preview = this.props.post.preview;
 
-        // prints Post details
+        var source = "";
+        var imageSourceUrl = "";
+        var height = "";
+        var highwidth = "";
+
+        if (preview && preview.images) {
+            
+            source = preview.images[0].source;
+            imageSourceUrl = source.url;
+            height = source.height;
+            highwidth = source.width; 
+
+        }
+
+        console.log(imageSourceUrl);
+
+        // prints Post scores
         if (gilded == 1) {
             return (
                 <div className="gold card">
-                	<p className="postTitle">{title}</p>
-                    <a className="commentslink">{num_comments} comments</a>
+                	<a className="postTitle" href={url} target="_blank">{title}</a>
+                    <a className="commentslink" href={comments_link} target="_blank">{num_comments} comments</a>
                 </div>
 
             );
@@ -28,8 +47,8 @@ var Post = React.createClass({
         else {
             return (
                 <div className="card">
-                	<p className="postTitle">{title}</p>
-                    <a className="commentslink">{num_comments} comments</a>
+                	<a className="postTitle" href={url} target="_blank">{title}</a>
+                    <a className="commentslink" href={comments_link} target="_blank">{num_comments} comments</a>
                 </div>
 
             );
