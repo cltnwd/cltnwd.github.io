@@ -78,6 +78,12 @@ body {
 	color: #2979FF; /* blue A400 */
 }
 
+.postSubreddit {
+  margin: 4px 8px 4px 0px;
+  color: #9E9E9E;
+  display: inline-block;
+}
+
 /*.hamburger-menu {
   width: 16px;
   height: 16px;

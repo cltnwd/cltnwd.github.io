@@ -39,6 +39,7 @@ var Post = React.createClass({
             return (
                 <div className="gold card">
                 	<a className="postTitle" href={url} target="_blank">{title}</a>
+                	<p className="postSubreddit">/r/{subreddit}</p>
                     <a className="commentslink" href={comments_link} target="_blank">{num_comments} comments</a>
                 </div>
 
@@ -48,6 +49,7 @@ var Post = React.createClass({
             return (
                 <div className="card">
                 	<a className="postTitle" href={url} target="_blank">{title}</a>
+                	<p className="postSubreddit">/r/{subreddit}</p>
                     <a className="commentslink" href={comments_link} target="_blank">{num_comments} comments</a>
                 </div>
 
