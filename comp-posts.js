@@ -145,15 +145,31 @@ var PostHolder = React.createClass({
     }
 });
 
+var Toolbar = React.createClass({
+
+    render: function() {
+
+        return (
+            <div id="toolbar">
+                <img id="toolbar-icon" src="icon.png" />
+                <div id="rrr">frontpage</div>
+            </div>
+
+        );
+    }
+});
+
 var Container = React.createClass({
 
     render: function() {
 
         return (
-            <div className={cardClass}>
-                <a className="postTitle" href={url} target="_blank">{title}</a>
-                <p className="postSubreddit" onClick={this.onSubClick}>/r/{subreddit}</p>
-                <a className="commentslink" href={comments_link} target="_blank">{num_comments} comments</a>
+            <div>
+                <Toolbar />
+                <div id="posts-container">
+                    <PostHolder url="http://www.reddit.com/.json" />
+                </div>
+                
             </div>
 
         );
@@ -162,6 +178,10 @@ var Container = React.createClass({
 
 // render the PostList while passing in 'Posts'
 ReactDOM.render(
-    <PostHolder url="http://www.reddit.com/.json" />,
-    document.getElementById('posts-container')
+    <Container />,
+    document.getElementById('container')
 );
+// ReactDOM.render(
+//     <PostHolder url="http://www.reddit.com/.json" />,
+//     document.getElementById('posts-container')
+// );

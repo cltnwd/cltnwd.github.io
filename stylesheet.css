@@ -2,6 +2,12 @@
   border: 1px solid red;
 }*/
 
+#container {
+  margin: 0px;
+  padding: 0px;
+
+}
+
 body {
   background: #e2e1e0;
   text-align: center;
@@ -9,7 +15,7 @@ body {
 }
 
 #posts-container {
-  padding-top: 56px;
+  padding-top: 72px;
 }
 
 #toolbar {
@@ -46,6 +52,10 @@ body {
   padding: 16px;
   text-align: left;
   min-width: 65%;
+}
+
+.card:nth-child(1) {
+  margin-top: 0px;
 }
 
 .gold {
