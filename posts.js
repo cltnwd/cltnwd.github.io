@@ -4,6 +4,10 @@ var Posts = [];
 // individual Post
 var Post = React.createClass({
 
+	onSubClick: function() {
+		this.props.onSubClick(this.props.post.subreddit);
+	},
+
     render: function() {
 
         // works inside json function but not here
@@ -23,38 +27,29 @@ var Post = React.createClass({
         var height = "";
         var highwidth = "";
 
+        // check for preview images
         if (preview && preview.images) {
-            
+
             source = preview.images[0].source;
             imageSourceUrl = source.url;
             height = source.height;
-            highwidth = source.width; 
+            highwidth = source.width;
 
         }
 
-        console.log(imageSourceUrl);
+        // if gilded
+        var cardClass = "card";
+        if (gilded == 1) cardClass = "gold card";
 
-        // prints Post scores
-        if (gilded == 1) {
-            return (
-                <div className="gold card">
-                	<a className="postTitle" href={url} target="_blank">{title}</a>
-                	<p className="postSubreddit">/r/{subreddit}</p>
-                    <a className="commentslink" href={comments_link} target="_blank">{num_comments} comments</a>
-                </div>
+        // return card
+        return (
+            <div className={cardClass}>
+            	<a className="postTitle" href={url} target="_blank">{title}</a>
+            	<p className="postSubreddit" onClick={this.onSubClick}>/r/{subreddit}</p>
+                <a className="commentslink" href={comments_link} target="_blank">{num_comments} comments</a>
+			</div>
 
-            );
-        } 
-        else {
-            return (
-                <div className="card">
-                	<a className="postTitle" href={url} target="_blank">{title}</a>
-                	<p className="postSubreddit">/r/{subreddit}</p>
-                    <a className="commentslink" href={comments_link} target="_blank">{num_comments} comments</a>
-                </div>
-
-            );
-        }
+        );
     }
 });
 
@@ -69,9 +64,10 @@ var PostList = React.createClass({
             // return Post for each Posts value
             var PostNodes = posts.map(function(thispost) {
                 return (
-                    <Post post={thispost} key={thispost.key} />
+                	// need to pass handleSubClick to child somehow ??
+                    <Post onSubClick={this.handleSubClick.bind(this)} post={thispost} key={thispost.key} />
                 );
-            });
+            }, this);
         }
 
         // render all Posts (PostNodes)
@@ -81,18 +77,30 @@ var PostList = React.createClass({
             </div>
 
         );
+    },
+    
+    handleSubClick: function(subreddit) {
+
+        // PostHolder.changeSub("http://www.reddit.com/r/" + this.props.post.subreddit);
+        //this.props.onSubClick();
+        this.props.loadPosts("http://www.reddit.com/r/" + subreddit + "/.json");
+
     }
 });
 
 // individual Post
 var PostHolder = React.createClass({
 
-    loadCommentsFromReddit: function() {
+    loadPostsFromReddit: function(url) {
 
-        console.log("loading...");
+        // use props if nothing is passed
+        if (!url) {
+            url = this.props.url;
+        }
+        console.log(">loading " + url);
 
         // gets data from reddit, stores in Posts
-        $.getJSON(this.props.url, function(json) {
+        $.getJSON(url, function(json) {
 
             // put results in an array
             var listing = json.data.children;
@@ -103,10 +111,13 @@ var PostHolder = React.createClass({
                 Posts[i].key = i;
             }
 
+            console.log(">retrieved " + Posts.length + " posts");
+
             // sets state of posts to reddit data
             this.setState({ posts: Posts });
 
         }.bind(this));
+
     },
 
     getInitialState: function() {
@@ -114,14 +125,14 @@ var PostHolder = React.createClass({
     },
 
     componentDidMount: function() {
-        this.loadCommentsFromReddit();
-        //setInterval(this.loadCommentsFromReddit, 2000);
+        this.loadPostsFromReddit(this.props.url);
+        //setInterval(this.loadPostsFromReddit, 2000);
     },
 
     render: function() {
 
         return (
-            <PostList data={this.state.posts} />
+            <PostList data={this.state.posts} loadPosts={this.loadPostsFromReddit} />
         );
     }
 });
@@ -129,5 +140,5 @@ var PostHolder = React.createClass({
 // render the PostList while passing in 'Posts'
 ReactDOM.render(
     <PostHolder url="http://www.reddit.com/.json" />,
-    document.getElementById('container')
+    document.getElementById('posts-container')
 );
