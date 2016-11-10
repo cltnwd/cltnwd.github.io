@@ -3,114 +3,120 @@
 }*/
 
 #container {
-  margin: 0px;
-  padding: 0px;
-
+    margin: 0px;
+    padding: 0px;
 }
 
 body {
-  background: #e2e1e0;
-  text-align: center;
-  margin: 0px;
+    background: #e2e1e0;
+    text-align: center;
+    margin: 0px;
 }
 
 #posts-container {
-  padding-top: 72px;
+    padding-top: 72px;
 }
 
 #toolbar {
-  background-color: #2979FF; /* blue A400 */
-  position: fixed;
-  width: 100%;
-  z-index: 2;
-  box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24);
-  text-align: left;
-  padding: 12px;
-  padding-left: 24px;
+    background-color: #2979FF;
+    /* blue A400 */
+    position: fixed;
+    width: 100%;
+    z-index: 2;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);
+    text-align: left;
+    padding: 12px;
+    padding-left: 24px;
 }
 
 #rrr {
-  display: inline-block;
-  vertical-align: middle;
-  font-family: "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
-  color: white;
-  letter-spacing: 1px;
-  font-size: 20px;
+    display: inline-block;
+    vertical-align: middle;
+    font-family: "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
+    color: white;
+    letter-spacing: 1px;
+    font-size: 20px;
 }
 
 .card {
-  background: #fff;
-  border-radius: 2px;
-  display: block;
-  height: auto;
-  margin: 1rem auto;
-  width: 350px;
-  box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24);
-  /* moves shadow down */
-  transition: all 0.3s cubic-bezier(.25,.8,.25,1);
-  font-family: Helvetica, sans-serif;
-  padding: 16px;
-  text-align: left;
-  min-width: 65%;
+    background: #fff;
+    border-radius: 2px;
+    display: block;
+    height: auto;
+    margin: 1rem auto;
+    width: 350px;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);
+    /* moves shadow down */
+    transition: all 0.3s cubic-bezier(.25, .8, .25, 1);
+    font-family: Helvetica, sans-serif;
+    padding: 16px;
+    text-align: left;
+    min-width: 65%;
 }
 
 .card:nth-child(1) {
-  margin-top: 0px;
+    margin-top: 0px;
 }
 
 .gold {
-  background: #FFFDE7;
+    background: #FFFDE7;
 }
+
 
 /*.card:hover {
   box-shadow: 0 14px 28px rgba(0,0,0,0.25), 0 10px 10px rgba(0,0,0,0.22);
 }*/
 
 .commentslink {
-  color: #424242;
-  font-size: 14px;
-  text-decoration: none;
+    color: #424242;
+    font-size: 14px;
+    text-decoration: none;
 }
 
 .commentslink:hover {
-	text-decoration: underline;
+    text-decoration: underline;
 }
 
 .postTitle {
-  font-weight: bold;
-  margin: 0px;
-  text-decoration: none;
-  color: black;
-  display: block;
+    font-weight: bold;
+    margin: 0px;
+    text-decoration: none;
+    color: black;
+    display: block;
 }
 
 .postTitle:hover {
-	
-	color: #2979FF; /* blue A400 */
+    color: #2979FF;
+    /* blue A400 */
 }
 
 .postSubreddit {
-  margin: 4px 8px 4px 0px;
-  color: #9E9E9E;
-  display: inline-block;
-  -webkit-user-select: none
+    margin: 4px 8px 4px 0px;
+    color: #9E9E9E;
+    display: inline-block;
+    outline: none;
+    border: none;
+    background-color: transparent;
+    font-size: 14px;
 }
 
 .postSubreddit:hover {
-  cursor: pointer;
-  color: #2979FF; /* blue A400 */
+    cursor: pointer;
+    color: #2979FF;
+    /* blue A400 */
 }
 
 #toolbar-icon {
-  height: 32px;
-  display: inline-block;
-  vertical-align: middle;
-  margin-right: 8px;
+    height: 32px;
+    display: inline-block;
+    vertical-align: middle;
+    margin-right: 8px;
 }
 
 #toolbar-icon:hover {
-  cursor: pointer;
+    cursor: pointer;
 }
+
 
 /*.hamburger-menu {
   width: 16px;
