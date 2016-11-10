@@ -117,6 +117,25 @@ body {
     cursor: pointer;
 }
 
+.hidden {
+    opacity: 0;
+    -ms-transform: translate(0px,-20px); /* IE 9 */
+    -webkit-transform: translate(0px,-20px); /* Safari */
+    transform: translate(0px,-20px);
+}
+
+.show {
+    opacity: 1;
+    transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+    -ms-transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+    -moz-transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+    -webkit-transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+    -ms-transform: translate(0px, 0px); /* IE 9 */
+    -webkit-transform: translate(0px, 0px); /* Safari */
+    transform: translate(0px, 0px);
+    -o-transform: translate(0px , 0px);
+}
+
 
 /*.hamburger-menu {
   width: 16px;

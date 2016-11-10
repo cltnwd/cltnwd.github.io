@@ -4,6 +4,22 @@ var Posts = [];
 // individual Post
 var Post = React.createClass({
 
+    getInitialState : function () {
+        return({hidden : "hidden card"});
+    },
+
+    componentWillMount : function () {
+        var that = this;
+        console.log(">wait = " + that.props.wait);
+        setTimeout(function() {
+            that.show();
+        }, that.props.wait);
+    },
+
+    show : function () {
+        this.setState({hidden : "show card"});
+    },
+
     onSubClick: function() {
         this.props.onSubClick(this.props.post.subreddit);
     },
@@ -37,13 +53,9 @@ var Post = React.createClass({
 
         }
 
-        // if gilded
-        var cardClass = "card";
-        if (gilded == 1) cardClass = "gold card";
-
         // return card
         return (
-            <div className={cardClass}>
+            <div className={this.state.hidden}>
                 <a className="postTitle" href={url} target="_blank">{title}</a>
                 <button className="postSubreddit" onClick={this.onSubClick}>/r/{subreddit}</button>
                 <a className="commentslink" href={comments_link} target="_blank">{num_comments} comments</a>
@@ -61,11 +73,18 @@ var PostList = React.createClass({
         var posts = this.props.data;
 
         if (this.props.data) {
+
+            var wait = 0;
+
             // return Post for each Posts value
             var PostNodes = posts.map(function(thispost) {
+                
+                // delay entry
+                wait += 25;
+
                 return (
                     // need to pass handleSubClick to child somehow ??
-                    <Post onSubClick={this.handleSubClick.bind(this)} post={thispost} key={thispost.key} />
+                    <Post wait={wait} onSubClick={this.handleSubClick.bind(this)} post={thispost} key={thispost.key} />
                 );
             }, this);
         }
