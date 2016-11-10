@@ -111,9 +111,11 @@ var PostHolder = React.createClass({
 
     loadPostsFromReddit: function(subreddit) {
 
-
-
         var url = "";
+
+        // re-do enter animation on each load
+        Posts = [];
+        this.setState({posts: Posts});
 
         // use props if nothing is passed
         if (!subreddit) {
