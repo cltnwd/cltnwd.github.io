@@ -4,20 +4,19 @@ var Posts = [];
 // individual Post
 var Post = React.createClass({
 
-    getInitialState : function () {
-        return({hidden : "hidden card"});
+    getInitialState: function() {
+        return ({ hidden: "hidden card" });
     },
 
-    componentWillMount : function () {
+    componentWillMount: function() {
         var that = this;
-        console.log(">wait = " + that.props.wait);
         setTimeout(function() {
             that.show();
         }, that.props.wait);
     },
 
-    show : function () {
-        this.setState({hidden : "show card"});
+    show: function() {
+        this.setState({ hidden: "show card" });
     },
 
     onSubClick: function() {
@@ -78,9 +77,9 @@ var PostList = React.createClass({
 
             // return Post for each Posts value
             var PostNodes = posts.map(function(thispost) {
-                
+
                 // delay entry
-                wait += 25;
+                wait += 50;
 
                 return (
                     // need to pass handleSubClick to child somehow ??
@@ -112,6 +111,8 @@ var PostHolder = React.createClass({
 
     loadPostsFromReddit: function(subreddit) {
 
+
+
         var url = "";
 
         // use props if nothing is passed
@@ -134,8 +135,6 @@ var PostHolder = React.createClass({
                 Posts[i] = listing[i].data;
                 Posts[i].key = i;
             }
-
-            console.log(">retrieved " + Posts.length + " posts");
 
             // sets state of posts to reddit data
             this.setState({ posts: Posts });
