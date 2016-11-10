@@ -45,7 +45,7 @@ var Post = React.createClass({
         return (
             <div className={cardClass}>
                 <a className="postTitle" href={url} target="_blank">{title}</a>
-                <p className="postSubreddit" onClick={this.onSubClick} tabindex="-1">/r/{subreddit}</p>
+                <p className="postSubreddit" onClick={this.onSubClick}>/r/{subreddit}</p>
                 <a className="commentslink" href={comments_link} target="_blank">{num_comments} comments</a>
             </div>
 

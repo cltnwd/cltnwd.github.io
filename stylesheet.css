@@ -93,6 +93,7 @@ body {
   margin: 4px 8px 4px 0px;
   color: #9E9E9E;
   display: inline-block;
+  -webkit-user-select: none
 }
 
 .postSubreddit:hover {
