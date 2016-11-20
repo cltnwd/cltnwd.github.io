@@ -51,7 +51,7 @@ body {
     font-family: Helvetica, sans-serif;
     padding: 16px;
     text-align: left;
-    max-width: 650px;
+    max-width: 850px;
 }
 
 .card:nth-child(1) {
@@ -90,7 +90,7 @@ body {
     /* blue A400 */
 }
 
-.postSubreddit {
+.postButton {
     margin: 4px 8px 4px 0px;
     color: #9E9E9E;
     display: inline-block;
@@ -100,7 +100,7 @@ body {
     font-size: 14px;
 }
 
-.postSubreddit:hover {
+.postButton:hover {
     cursor: pointer;
     color: #2979FF;
     /* blue A400 */
@@ -117,21 +117,79 @@ body {
     cursor: pointer;
 }
 
-.hidden {
-    opacity: 0;
-    -ms-transform: translate(0px,-20px); /* IE 9 */
-    -webkit-transform: translate(0px,-20px); /* Safari */
-    transform: translate(0px,-20px);
+.commentscontainer.hidden {
+    display: none;
 }
 
-.show {
-    opacity: 1;
-    transition: opacity 0.4s ease-out, transform 0.4s ease-out;
-    -ms-transition: opacity 0.4s ease-out, transform 0.4s ease-out;
-    -moz-transition: opacity 0.4s ease-out, transform 0.4s ease-out;
-    -webkit-transition: opacity 0.4s ease-out, transform 0.4s ease-out;
-    -ms-transform: translate(0px, 0px); /* IE 9 */
-    -webkit-transform: translate(0px, 0px); /* Safari */
-    transform: translate(0px, 0px);
-    -o-transform: translate(0px , 0px);
+.commentsList {
+	display: inline-block;
+}
+
+.commentsholder {
+	padding: 8px 8px 8px 0px;
+	margin: 8px 0px 8px 8px;
+	border-radius: 2px 2px 2px 2px;
+}
+
+.commentsholder.one {
+	background-color: #f5f5f5;
+	border-left: #2979FF solid 3px;
+}
+
+.commentsholder.two {
+	background-color: #e0e0e0;
+	border-left: purple solid 3px;
+}
+
+.commentsholder.three {
+	background-color: #f5f5f5;
+	border-left: green solid 3px;
+}
+
+.commentsholder.four {
+	background-color: #e0e0e0;
+	border-left: red solid 3px;
+}
+
+.commentsList.show {
+	opacity: 1;
+    transition: opacity 2.0s ease-out;
+    -ms-transition: opacity 2.0s ease-out;
+    -moz-transition: opacity 2.0s ease-out;
+    -webkit-transition: opacity 2.0s ease-out;
+}
+
+.commentsList.hidden {
+	opacity: 0;
+    transition: opacity 2.0s ease-out;
+    -ms-transition: opacity 2.0s ease-out;
+    -moz-transition: opacity 2.0s ease-out;
+    -webkit-transition: opacity 2.0s ease-out;
+}
+
+.comment {
+	padding-left: 4px;
+	/*border-top: black solid 1px;
+	border-bottom: black solid 1px;*/
+	/*background-color: #f5f5f5;*/
+}
+
+.comment.one {
+	/*border-left: #2979FF solid 2px;*/
+}
+
+.comment.two {
+	/*border-left: red solid 2px;*/
+}
+
+.comment.three {
+	/*border-left: green solid 2px;*/
+}
+
+.comment.four {
+	/*border-left: orange solid 2px;*/
+}
+
+.comment.five {
+	/*border-left: brown solid 2px;*/
 }
