@@ -11,7 +11,7 @@ var Posts = [];
 var Comment = React.createClass({
 
     getInitialState: function() {
-        return { comments: [] };
+        return { comments: [], collapseCommentsClass: "comment ", cbut: "[-]" };
     },
 
     componentDidMount: function() {
@@ -51,41 +51,70 @@ var Comment = React.createClass({
         //     marginLeft: this.props.level * 4
         // };
 
-        var num = (this.props.level-1)%4;
+        var num = (this.props.level - 1) % 4;
         var x = "";
-        switch(num) {
-        	case 0: x="one"; break;
-        	case 1: x="two"; break;
-        	case 2: x="three"; break;
-        	case 3: x="four"; break;
-        	default: x="one"; break;
+        switch (num) {
+            case 0:
+                x = "one";
+                break;
+            case 1:
+                x = "two";
+                break;
+            case 2:
+                x = "three";
+                break;
+            case 3:
+                x = "four";
+                break;
+            default:
+                x = "one";
+                break;
         }
 
         if (this.state.comments.length == 0) {
-        	return (
-            <div>
+            return (
+                <div>
+                
             	<div className={"comment " + x}>
                 	{bodytext}
             	</div>
         	</div>
-        );
+            );
         }
 
         // return card for comment
         return (
             <div>
-            	<div className={"comment " + x}>
+            	<button className="collapsebutton" onClick={this.onCollapseButtonClick} className="collapsebutton">{this.state.cbut}</button>
+            	<div className={this.state.collapseCommentsClass + x}>
                 	{bodytext}
+            		<CommentsList data={this.state.comments} level={this.props.level+1} />
             	</div>
-            	<CommentsList data={this.state.comments} level={this.props.level+1} />
         	</div>
         );
 
+    },
+
+    onCollapseButtonClick: function() {
+        
+        if (this.state.collapseCommentsClass == "comment ") {
+            this.setState({ collapseCommentsClass: "comment hidecomments " });
+            this.setState({ cbut: "[+]" });
+        }
+        else {
+        	this.setState({ collapseCommentsClass: "comment " });
+        	this.setState({ cbut: "[-]" });
+        }
     }
 });
 
+
 // holds individual Posts
 var CommentsList = React.createClass({
+
+    getInitialState: function() {
+        return { collapseCommentsClass: "commentsholder" };
+    },
 
     render: function() {
 
@@ -102,23 +131,44 @@ var CommentsList = React.createClass({
             }, this);
         }
 
-        var num = (this.props.level-1)%4;
+        var num = (this.props.level - 1) % 4;
         var x = "";
-        switch(num) {
-        	case 0: x="one"; break;
-        	case 1: x="two"; break;
-        	case 2: x="three"; break;
-        	case 3: x="four"; break;
-        	default: x="one"; break;
+        switch (num) {
+            case 0:
+                x = "one";
+                break;
+            case 1:
+                x = "two";
+                break;
+            case 2:
+                x = "three";
+                break;
+            case 3:
+                x = "four";
+                break;
+            default:
+                x = "one";
+                break;
         }
 
         // render all comments (PostNodes)
         return (
-            <div className={"commentsholder " + x}>
+            <div className={this.state.collapseCommentsClass + " " + x}>
+            	
                 {CommentNodes}
             </div>
 
         );
+    },
+
+    onCollapseButtonClick: function() {
+        
+        if (this.state.collapseCommentsClass == "commentsholder") {
+            this.setState({ collapseCommentsClass: "commentsholder hidecomments" });
+        }
+        else {
+        	this.setState({ collapseCommentsClass: "commentsholder" });
+        }
     }
 });
 
@@ -164,9 +214,9 @@ var CommentsHolder = React.createClass({
     render: function() {
         var level = 1;
         return (
-        	
+
             <CommentsList data={this.state.comments} level={level} />
-            
+
         );
     }
 });
@@ -191,10 +241,9 @@ var Post = React.createClass({
 
     onCommentsClick: function() {
         if (this.state.commentsContainerState == "hidden") {
-        	this.setState({ commentsContainerState: "" });
-        }
-        else {
-        	this.setState({ commentsContainerState: "hidden" });	
+            this.setState({ commentsContainerState: "" });
+        } else {
+            this.setState({ commentsContainerState: "hidden" });
         }
     },
 
@@ -291,7 +340,7 @@ var PostList = React.createClass({
 
 var PostHolder = React.createClass({
 
-    
+
 
     componentDidMount: function() {
         //this.loadPostsFromReddit();
@@ -322,7 +371,7 @@ var Toolbar = React.createClass({
 
 var Container = React.createClass({
 
-	loadPostsFromReddit: function(subreddit) {
+    loadPostsFromReddit: function(subreddit) {
 
         var url = "";
 
@@ -366,14 +415,14 @@ var Container = React.createClass({
         //setInterval(this.loadPostsFromReddit, 2000);
     },
 
-	getInitialState: function() {
+    getInitialState: function() {
         return { url: "http://www.reddit.com/.json", posts: [] };
     },
 
     resetToFront: function() {
-    	console.log("clicky");
-    	this.setState({ url: "http://www.reddit.com/.json" });
-    	this.loadPostsFromReddit();
+        console.log("clicky");
+        this.setState({ url: "http://www.reddit.com/.json" });
+        this.loadPostsFromReddit();
     },
 
     render: function() {
