@@ -1,0 +1,106 @@
+body {
+	background-color: rgb(27,43,52);
+	margin-top: 48px;
+	font-family: 'Roboto Mono', monospace;
+	padding-left: 32px;
+	padding-right: 32px;
+}
+
+.h-divider {
+	width: 100%;
+	height: 1px;
+	background-color: white;
+	margin-bottom: 24px;
+}
+
+#header {
+	color: white;
+	margin-bottom: 0px;
+}
+
+#subheader {
+	margin-top: 0px;
+	color: rgb(102,150,186);
+
+}
+
+#title-block {
+	width: 100%;
+}
+
+#name-header {
+	font-family: "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif; 
+	font-weight: 900;
+	color: #1de9b6;
+	margin-bottom: 0px;
+}
+
+#dev-header {
+	font-family: "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif; 
+	font-weight: 900;
+	color: #757575;
+	margin-top: 0px;
+}
+
+.code {
+	font-size: 12px;
+	color: rgb(205,211,222);
+}
+
+.var {
+	color: rgb(195,146,195);
+	display: inline-block;
+}
+
+.l1 {
+
+}
+
+.l2 {
+	margin-left: 36px;
+}
+
+.l3 {
+
+}
+
+a {
+	text-decoration: none;
+}
+
+a:hover, .link:hover {
+	border-bottom: 1px dotted #F44336;
+	cursor: pointer;
+}
+
+#biolink {
+
+}
+
+#biocontent {
+	display: none;
+}
+
+#endbio {
+	display: none;
+}
+
+#link:hover {
+	
+}
+
+#reslink-container {
+	margin: 0 0 36px 0;
+}
+
+#reslink {
+
+}
+
+#resume {
+	display: none;
+}
+
+#footer {
+	
+}

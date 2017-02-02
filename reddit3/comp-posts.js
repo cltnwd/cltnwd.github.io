@@ -8,6 +8,7 @@ var Posts = [];
 //        </ul>
 
 // individual Post
+var youready = "Fry??";
 var Comment = React.createClass({
 
     getInitialState: function() {
@@ -449,3 +450,4 @@ ReactDOM.render(
 //     <PostHolder url="http://www.reddit.com/.json" />,
 //     document.getElementById('posts-container')
 // );
+
