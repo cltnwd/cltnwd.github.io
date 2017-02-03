@@ -2,6 +2,7 @@
 <html>
 
 	<head>
+		<meta name="viewport" content="width=device-width, initial-scale=1">
 		<link href="https://fonts.googleapis.com/css?family=Roboto+Mono" rel="stylesheet">
 		<link rel="stylesheet" type="text/css" href="styles.css?2" />
 		
@@ -21,7 +22,7 @@
 			</span>
 			<div>
 				<p id="biocontent" class="l2 code"></p>
-				<p id="endbio" class="l1 code">}</p>
+				<p id="endbio" class="l1 code">};</p>
 			</div>
 		</div>
 
@@ -34,13 +35,22 @@
 
 		<!-- resume -->
 		<div id="reslink-container">
-			<span id="reslink" class="l1 link">
-				<span class="var code">var&nbsp;</span><span class="code">resume;</span>
+			<span id="reslink" class="l1">
+				<span class="var code">var&nbsp;</span><span id="res" class="code">resume = {</span>
 			</span>
+			<div>
+				<p>
+				<span class="var code l2">var&nbsp;</span><span id="linkstr" class="code">link = </span>
+				<a id="areslink" class="string" 
+				href="https://drive.google.com/open?id=0B1FXuplRfrlEb1ZoS1FoZVV6Z1k" 
+				target="_blank">"Click here to download resume.pdf";
+				</a>
+				<p id="endres" class="l1 code">};</p>
+			</div>
 		</div>
 
 		<!-- resume iframe -->
-		<iframe id="resume" src="resume3.html" width="100%" height="1100px"></iframe>
+		<!-- <iframe id="resume" src="resume3dark.html" width="100%" height="1100px"></iframe> -->
 
 		<script src="app.js"></script>
 	</body>

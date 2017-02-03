@@ -47,6 +47,11 @@ body {
 	color: rgb(205,211,222);
 }
 
+.string {
+	font-size: 12px;
+	color: rgb(152,196,35);
+}
+
 .var {
 	color: rgb(195,146,195);
 	display: inline-block;
@@ -85,12 +90,24 @@ a:hover, .link:hover {
 	display: none;
 }
 
+#rescontent {
+	
+}
+
+#areslink {
+
+}
+
+#endres {
+	margin-top: 0px;
+}
+
 #link:hover {
 	
 }
 
 #reslink-container {
-	margin: 0 0 36px 0;
+
 }
 
 #reslink {
