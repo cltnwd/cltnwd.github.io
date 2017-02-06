@@ -43,14 +43,14 @@ $(document).ready(function() {
 		clearTimeout(timertext);
 		// reset
 		if ($("#biolink").hasClass("active")) {
-			$("#bio").html("bio;");
+			$("#bio").html("bio = function() {...};");
 			$("#biocontent").html("");
 			$("#biocontent").toggle();
 			$("#endbio").toggle();			
 		}
 		else {
 
-			$("#bio").html("bio = {");
+			$("#bio").html("bio = function() {");
 			$("#biocontent").toggle();
 			$("#endbio").toggle();
 			typeText("#biocontent", "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc non facilisis felis. In consectetur ex eget ante venenatis vehicula. Curabitur ut nisi tortor. Nulla posuere lectus leo, eget luctus erat dapibus vitae. Mauris sem enim, commodo eu erat eget, gravida porta velit. Quisque condimentum, ex a malesuada porttitor, nisi nibh mollis sapien, ut semper sem erat quis ex. Quisque a tempus mauris. Vestibulum venenatis cursus orci laoreet mattis. Maecenas fermentum magna quis risus blandit sagittis. Praesent vitae ligula placerat nisi efficitur sagittis. Cras facilisis enim sit amet accumsan eleifend._Donec id ullamcorper orci. Aenean imperdiet eros felis, id imperdiet enim tincidunt sed. Vestibulum dapibus porta arcu elementum laoreet. Quisque eu lectus vitae libero porttitor pretium a a nulla. Cras at nibh auctor, faucibus libero quis, rhoncus ex. Cras lobortis sapien quis est aliquet, id porttitor turpis pharetra. Vestibulum scelerisque erat a diam mollis mattis. Integer et tellus quam. Mauris quis nisl rutrum, facilisis nisi eu, hendrerit neque.", 0, 1);
