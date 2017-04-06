@@ -5,14 +5,16 @@ var app = new Vue({
     data: {
     	panelClass: '',
     	squeeze: '',
+    	menuClass: '',
         message: 'Hello world!',
         posts: []
     },
     methods: {
-        togglePanel: function() {
+		togglePanel: function() {
 	console.log('tog');
 			this.panelClass = (this.panelClass == '') ? 'active' : '';
 			this.squeeze = (this.squeeze == '') ? 'squeeze' : '';
+			this.menuClass = (this.menuClass == '') ? 'active' : '';
         },
         getData: function(rURL) {
             $.getJSON(rURL, function(data) {

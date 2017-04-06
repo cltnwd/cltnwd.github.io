@@ -16,7 +16,11 @@
 <body>
     <div id="app">
         <div id='toolbar'>
-        	<i class="fa fa-bars menu-icon" aria-hidden="true" v-on:click='togglePanel()'></i>
+            <div id='menu-div-holder' :class='menuClass' v-on:click='togglePanel()'>
+                <div id='menu-1' :class='menuClass'></div>
+                <div id='menu-2' :class='menuClass'></div>
+                <div id='menu-3' :class='menuClass'></div>
+            </div>
             <span id='toolbar-title'>/r/frontpage</span>
         </div>
         <div id='side-panel' :class='panelClass'></div>

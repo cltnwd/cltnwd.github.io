@@ -55,14 +55,50 @@ body {
     transform: translate3d(0, 0, 0);
 }
 
-.menu-icon {
-    font-size: 1em;
+#menu-div-holder {
+    width: 16px;
+    height: 16px;
     margin: 0 16px;
-    color: white;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    transition: all 0.3s ease-in-out;
 }
-
-.menu-icon:hover {
+#menu-div-holder.active {
+    transform: rotate(180deg);
+}
+#menu-div-holder:hover {
     cursor: pointer;
+}
+#menu-1 {
+    width: 16px;
+    height: 2px;
+    background-color: white;
+    transition: all 0.3s ease-in-out;
+}
+#menu-2 {
+    width: 16px;
+    height: 2px;
+    background-color: white;
+    transition: all 0.3s ease-in-out;
+}
+#menu-3 {
+    width: 16px;
+    height: 2px;
+    background-color: white;
+    transition: all 0.3s ease-in-out;
+}
+#menu-1.active {
+    transform: translate3d(7px,1px,0) rotate(40deg);
+    width: 12px;
+}
+#menu-2.active {
+    /*transform: translate3d(-7px,0,0);*/
+    width: 18px;
+}
+#menu-3.active {
+    transform: translate3d(7px,-1px,0) rotate(-40deg);
+    width: 12px;
 }
 
 .card {
@@ -80,6 +116,7 @@ body {
 
 
 /* min 800 px width */
+
 @media only screen and (min-width: 800px) {
     #post-holder {
         padding: 50px 8px 0 8px;
