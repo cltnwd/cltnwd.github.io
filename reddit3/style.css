@@ -75,18 +75,21 @@ body {
     height: 2px;
     background-color: white;
     transition: all 0.3s ease-in-out;
+    border-radius: 3px;
 }
 #menu-2 {
     width: 16px;
     height: 2px;
     background-color: white;
     transition: all 0.3s ease-in-out;
+    border-radius: 3px;
 }
 #menu-3 {
     width: 16px;
     height: 2px;
     background-color: white;
     transition: all 0.3s ease-in-out;
+    border-radius: 3px;
 }
 #menu-1.active {
     transform: translate3d(7px,1px,0) rotate(40deg);
