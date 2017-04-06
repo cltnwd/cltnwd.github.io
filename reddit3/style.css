@@ -12,10 +12,11 @@ body {
 
 #post-holder {
     padding: 50px 8px 0 8px;
-    transition: padding-left .8s ease-in-out;
+    /*transition: padding-left .8s ease-in-out;*/
 }
+
 #post-holder.squeeze {
-    padding-left: 308px;
+    /*padding-left: 308px;*/
 }
 
 #toolbar {
@@ -49,6 +50,7 @@ body {
     background-color: white;
     box-shadow: 1px 0 3px rgba(0, 0, 0, 0.12), 1px 0px 2px rgba(0, 0, 0, 0.24);
 }
+
 #side-panel.active {
     transform: translate3d(0, 0, 0);
 }
@@ -58,6 +60,7 @@ body {
     margin: 0 16px;
     color: white;
 }
+
 .menu-icon:hover {
     cursor: pointer;
 }
@@ -71,6 +74,18 @@ body {
 }
 
 .post {
-    max-width: 550px;
+    max-width: 750px;
     margin: 8px auto;
+}
+
+
+/* min 800 px width */
+@media only screen and (min-width: 800px) {
+    #post-holder {
+        padding: 50px 8px 0 8px;
+        transition: padding-left .8s ease-in-out;
+    }
+    #post-holder.squeeze {
+        padding-left: 308px;
+    }
 }
