@@ -92,7 +92,7 @@ body {
     border-radius: 3px;
 }
 #menu-1.active {
-    transform: translate3d(7px,1px,0) rotate(40deg);
+    transform: translate3d(7px,2px,0) rotate(40deg);
     width: 12px;
 }
 #menu-2.active {
@@ -100,7 +100,7 @@ body {
     width: 18px;
 }
 #menu-3.active {
-    transform: translate3d(7px,-1px,0) rotate(-40deg);
+    transform: translate3d(7px,-2px,0) rotate(-40deg);
     width: 12px;
 }
 
