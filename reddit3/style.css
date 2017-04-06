@@ -1,0 +1,76 @@
+body {
+    font-family: "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
+    font-weight: 300;
+    background-color: #EEEEEE;
+    padding: 0;
+    margin: 0;
+}
+
+#app {
+    margin: 0;
+}
+
+#post-holder {
+    padding: 50px 8px 0 8px;
+    transition: padding-left .8s ease-in-out;
+}
+#post-holder.squeeze {
+    padding-left: 308px;
+}
+
+#toolbar {
+    background-color: #2979FF;
+    position: fixed;
+    width: 100%;
+    z-index: 10;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);
+    margin: 0;
+    height: 50px;
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    align-items: center;
+}
+
+#toolbar-title {
+    font-family: Helvetica;
+    color: white;
+    font-size: 1.25em;
+    letter-spacing: 1px;
+}
+
+#side-panel {
+    width: 300px;
+    height: calc(100vh - 50px);
+    top: 50px;
+    position: fixed;
+    transition: transform .5s ease-in-out;
+    transform: translate3d(-302px, 0, 0);
+    background-color: white;
+    box-shadow: 1px 0 3px rgba(0, 0, 0, 0.12), 1px 0px 2px rgba(0, 0, 0, 0.24);
+}
+#side-panel.active {
+    transform: translate3d(0, 0, 0);
+}
+
+.menu-icon {
+    font-size: 1em;
+    margin: 0 16px;
+    color: white;
+}
+.menu-icon:hover {
+    cursor: pointer;
+}
+
+.card {
+    background: #fff;
+    border-radius: 2px;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);
+    padding: 16px;
+    text-align: left;
+}
+
+.post {
+    max-width: 550px;
+    margin: 8px auto;
+}

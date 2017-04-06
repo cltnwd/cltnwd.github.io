@@ -11,8 +11,16 @@
 
 	<body>
 
-		<h1 id="header">Colton Wood</h1>
-		<h3 id="subheader">Developer</h3>
+		<div>
+			<div class="headerbox">
+				<span id="header">Colton Wood</span>
+				<span class="contactinfo code">coltonwood.dev@gmail.com</span>
+			</div>
+			<div class="headerbox">
+				<span id="subheader">Developer</span>
+				<span class="contactinfo code">903.563.1375</span>
+			</div>
+		</div>
 		<div class="h-divider"></div>
 		
 		<!-- instructions -->
@@ -23,7 +31,7 @@
 		<!-- biography -->
 		<div>
 			<span id="biolink" class="l1 link">
-				<span class="var code">var&nbsp;</span><span id="bio" class="code">bio = function() {...};</span>
+				<span class="var code">var&nbsp;</span><span id="bio" class="code">bio = <span class="var code">function</span><span class="code">(</span><span class="code param">me</span><span class="code">);</span>
 			</span>
 			<div>
 				<p id="biocontent" class="l2 code"></p>
@@ -34,18 +42,18 @@
 		<!-- experience -->
 		<div>
 			<span id="explink" class="l1 link">
-				<span class="var code">var&nbsp;</span><span class="code">experience;</span>
+				<span class="var code">var&nbsp;</span><span class="code">experience = <span class="var code">function</span><span class="code">();</span>
 			</span>
 		</div>
 
 		<!-- resume -->
 		<div id="reslink-container">
 			<span id="reslink" class="l1">
-				<span class="var code">var&nbsp;</span><span id="res" class="code">resume = {</span>
+				<span class="var code">var&nbsp;</span><span id="res" class="code">resume = <span class="var code">function</span><span class="code">(<span class="code param">link</span><span class="code">) {</span>
 			</span>
 			<div>
 				<p>
-				<span class="var code l2">var&nbsp;</span><span id="linkstr" class="code">link = </span>
+				<span id="linkstr" class="code l2">link = </span>
 				<a id="areslink" class="string" 
 				href="https://drive.google.com/open?id=0B1FXuplRfrlEb1ZoS1FoZVV6Z1k" 
 				target="_blank">"Click here to view resume.pdf"
@@ -53,9 +61,6 @@
 				<p id="endres" class="l1 code">};</p>
 			</div>
 		</div>
-
-		<!-- resume iframe -->
-		<!-- <iframe id="resume" src="resume3dark.html" width="100%" height="1100px"></iframe> -->
 
 		<script src="app.js"></script>
 	</body>
