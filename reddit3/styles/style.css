@@ -1,0 +1,44 @@
+body {
+    background-color: #edf1f3;
+}
+
+#app {
+    padding-left: 300px;
+}
+
+.nav-wrapper {
+	padding-left: 16px;
+}
+
+.subreddit-name {
+	font-size: 1rem;
+	display: block;
+}
+
+.lg-icon {
+	font-size: 5rem;
+}
+
+.selftext-label {
+	padding: 0 !important;
+}
+
+.post .collapsible {
+	margin: 0 !important;
+    box-shadow: none;
+    border: none;
+}
+
+.post .collapsible .collapsible-body, .post .collapsible .collapsible-header {
+	border: none;
+}
+
+@media only screen and (max-width: 992px) {
+    #app {
+        padding-left: 0;
+    }
+
+    .nav-wrapper {
+		padding-left: 0px;
+	}
+}
