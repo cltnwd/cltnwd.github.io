@@ -59,6 +59,7 @@
                             </ul>
                             <span v-else class="card-title" v-html="post.data.title"></span>
                             <span class="indigo-text text-accent-4 subreddit-name">/r/{{ post.data.subreddit }}</span>
+                            <p class="domain grey-text text-lighten-1">{{ post.data.domain }}</p>
                             <span class="grey-text text-lighten-1">{{ k(post.data.ups) }} points</span>
                         </div>
                         <div class="card-image col s2 center-align">

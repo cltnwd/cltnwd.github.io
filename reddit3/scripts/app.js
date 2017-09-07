@@ -17,6 +17,7 @@ var app = new Vue({
                         Vue.nextTick(function() {
                             $('.collapsible').collapsible()
                             $('.materialboxed').materialbox()
+                            $(".button-collapse").sideNav();
                         })
                     } catch (e) {
                         console.log(e)
